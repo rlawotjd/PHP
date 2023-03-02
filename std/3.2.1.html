@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>항목1</li>
+        <li>항목2</li>
+        <li>항목3</li>
+        <li>항목4</li>
+        <li>항목5</li>
+        <li>항목6</li>
+    </ul>
+    <!-- todo:선생님이 하신 emmet커맨드가 뭐였지 -->
+
+    <!-- dl>dt+dd -->
+    <dl>
+        <dt>상품명</dt>
+        <dd>수박</dd>
+        <dd>사과</dd>
+    </dl>
+    <!-- table>tr>(th+td)*2 tr=행 th=열제목 td=열date-->
+    <table>
+        <caption>반 성적</caption>
+        <!-- 표제목 -->
+        <tr>
+            <th>1반</th>
+            <td>90점</td>
+        </tr>
+        <tr>
+            <th>2반</th>
+            <td>80점</td>
+        </tr>
+    </table>
+    <table>
+        <caption>반 성적</caption>
+        <!-- 표제목 -->
+        <thead>
+        <tr> 
+            <th>1반</th>
+            <th>2반</th>         
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>90점</td>
+            <td>60점</td>
+        </tr>
+        <tr>
+            <td>80점</td>
+            <td>70점</td>
+        </tr>
+        </tbody>
+        <!-- <tfoot>
+            <td>foot1</td>
+            <td>foot2</td>
+        </tfoot> -->
+    </table>
+    <title>Document</title>
+    <style>
+        table{
+            border : 1px solid black;
+            border-collapse: collapse;
+        }
+        th,
+        td{
+            border: 1px solid black;
+        }
+
+        .col1{
+            background-color: yellow;
+        }
+        .col2{
+            background-color: rgb(0, 255, 0);
+        }
+    </style>
+    <table>
+        <caption>학급 성적표</caption>
+        <colgroup>
+            <col class="col1">
+            <col class="col2">
+            <col>
+            <col>
+            <col>
+            <col>
+            <!-- 열이 6개라 col도 6개 -->
+        </colgroup>
+        <tr>
+            <th>반</th>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>과학</th>
+        </tr>
+        <tr>
+            <th rowspan="2">1반</th>
+            <th>홍길동</th>
+            <th>100</th>
+            <th>80</th>
+            <th>90</th>
+            <th>90</th>
+        </tr>
+        <tr>
+            <!-- <th rowspan="2">1반</th> -->
+            <th>김철수</th>
+            <th>80</th>
+            <th>100</th>
+            <th>90</th>
+            <th>80</th>
+        </tr>
+        <tr>
+            <th colspan="2">평균</th>
+            <!-- 행의크기가 2로 설정 -->
+            <!-- <th>필요없는 행</th> -->
+            <th>90</th>
+            <th>90</th>
+            <th>90</th>
+            <th>85</th>
+        </tr>
+
+
+
+</body>
+</html>
