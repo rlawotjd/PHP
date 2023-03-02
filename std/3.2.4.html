@@ -17,8 +17,77 @@
         <!-- <input type="text" name="id1" id="id-1"> -->
         <!-- 라벨의 for=인풋의 id -->
         <!-- 네임은 같은 값은 존재해도 상관없으나 id는 고유한 값 -->
+        <!-- <br> -->
+        <!-- <label>
+            ID_1
+            <input type="text" name="id_1" id="id_1"> -->
+            <!-- 암묵적 라벨 -->
+        <br>
         <label for="PW">PW</label>
         <input type="password" name="pw" id="PW">
+        <input type="text" name="id" id="id1" maxlength="10" size="">
+        <br>
+        <label for="sech">select</label>
+        <input type="search" name="sech" id="sech">
+        <br>
+        <label for="url">url</label>
+        <input type="url" name="url" id="url">
+        <br>
+        <label for="email">email</label>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="tel">tel</label>
+        <input type="tel" name="tel" id="tel">
+        <br>
+        <div>
+            <label for="sb">딸기</label>
+            <input type="checkbox" name="sb" id="sb">
+            <label for="banana">바나나</label>
+            <input type="checkbox" name="banana" id="banana">
+            <label for="watermallon">수박</label>
+            <input type="checkbox" name="watermallon" id="watermallon">
+        </div>
+        <ul>
+            <li>
+                <label for="sb">딸기</label>
+                <input type="checkbox" name="fruit" id="sb" value="sb">
+            </li>
+            <li>
+                <label for="banana">바나나</label>
+                <input type="checkbox" name="fruit" id="banana" value="ba">
+            </li>
+            <li>
+                <label for="watermallon">수박</label>
+                <input type="checkbox" name="fruit" id="watermallon" value="wm">
+            </li>
+        </ul>
+        <br>
+        <ul>
+            <li>
+                <label for="rsb">딸기</label>
+                <input type="radio" name="fruit" id="rsb">
+            </li>
+            <li>
+                <label for="rbanana">바나나</label>
+                <input type="radio" name="fruit" id="rbanana">
+            </li>
+            <li>
+                <label for="rwatermallon">수박</label>
+                <input type="radio" name="fruit" id="rwatermallon">
+            </li>
+        <br>
+        <label for="number">number</label>
+        <input type="number" value="5" min="0" max="100" name="number" id="number">
+        <br>
+        <label for="range">range</label>
+        <input type="range" name="range" id="range">
+        <br>
+        <label for="날짜"></label>
+        <input type="date" name="date" id="date" min="2023-03-01" max="9999-12-31">
+        <br>
+        <input type="submit" name="submit" id="submit">
+        <input type="reset" name="reset" id="reset">
+        <button>버튼</button>
     </fieldset>
     <fieldset>
         <legend>배송 정보</legend>
