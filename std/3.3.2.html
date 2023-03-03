@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <label for="textbox">메모</label>
+            <textarea name="memo" id="textbox" cols="200" rows="10"></textarea>
+            <!-- cols의 개수증가 = 열이 길어짐 -->
+            <br>
+            <select name="select" id="select" size="5" multiple>
+                <option value="a">1</option>
+                <option value="b">2</option>
+                <option value="c" selected>3</option>
+                <option value="d">4</option>
+                <option value="e">5</option>
+                <option value="f">6</option>
+                <option value="g">7</option>
+                <option value="h">8</option>
+                <option value="i">9</option>
+                <option value="j">10</option>
+            </select>
+            <br>
+            <label for="cook">요리</label>
+            <input type="text" name="cook" id="cook" list="datalist">
+            <!-- 인풋의 리시트 = 데이타리스트 아이디 -->
+            <datalist name="datalist" id="datalist">
+                <option value="1">밥</option>
+                <option value="2">돈까스</option>
+                <option value="3">샐러드</option>
+                <option value="4">김치</option>
+            </datalist>
+            <br>
+            <button type="submit">제출</button>
+            <button type="button">버튼</button>
+            <button type="reset">리셋</button>
+            <button type="menu">메뉴</button>
+            <!-- 인풋과 버튼 웹접근성 차이 버튼이라고 알려줌 -->
+        </fieldset>
+    </form>
+</body>
+</html>
