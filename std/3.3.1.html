@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>
+                고객 정보
+            </legend>
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id" autofocus 
+            placeholder="아이디" required>
+            <!-- autofocus 자동 활성화 placeholder 칸에 희미한글자 required 조건부 -->
+            <br>
+            <label for="pw">P.W</label>
+            <input type="password" name="pw" id="pw" size="18" maxlength="18" placeholder="비밀번호">
+            <br>
+            <label for="readonly">참조사항</label>
+            <input type="tex" readonly value="참조사항">
+            <!-- 유저들 작성불과 읽기전용 -->
+            <br>
+            <input type="submit" name="sub" id="sub">
+            <br>
+            <ul>
+                <li>
+                    <label for="sb">딸기</label>
+                    <input type="checkbox" name="fruit" id="sb" value="sb" checked>
+                    <!-- checked 자동선택 -->
+                </li>
+                <li>
+                    <label for="banana">바나나</label>
+                    <input type="checkbox" name="fruit" id="banana" value="ba">
+                </li>
+                <li>
+                    <label for="watermallon">수박</label>
+                    <input type="checkbox" name="fruit" id="watermallon" value="wm">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label for="rsb">딸기</label>
+                    <input type="radio" name="fruit" id="rsb">
+                </li>
+                <li>
+                    <label for="rbanana">바나나</label>
+                    <input type="radio" name="fruit" id="rbanana" checked>
+                </li>
+                <li>
+                    <label for="rwatermallon">수박</label>
+                    <input type="radio" name="fruit" id="rwatermallon">
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

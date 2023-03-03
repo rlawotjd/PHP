@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="get"></form>
+    <form action="" method="get">
     <!-- get정보공개 post비공개(보안성문제) -->
     <!-- action 백엔드 실습후 -->
     <fieldset>
@@ -84,10 +84,21 @@
         <br>
         <label for="날짜"></label>
         <input type="date" name="date" id="date" min="2023-03-01" max="9999-12-31">
+        <label for="dt">국제</label>
+        <input type="datetime" name="dt" id="dt">
         <br>
-        <input type="submit" name="submit" id="submit">
-        <input type="reset" name="reset" id="reset">
+        <label for="submit">전송</label>
+        <input type="submit" name="submit" id="submit" value="전송123">
+        <label for="reset">리셋</label>
+        <input type="reset" name="reset" id="reset" >
+        <label for="bt">버튼</label>
+        <input type="button" name="bt" id="bt">
+        <label for="hd">히든</label>
+        <!-- 라벨필요없 -->
+        <input type="hidden" name="hd" id="hd" value="hidden_1">
         <button>버튼</button>
+    </form>
+    <!-- 폼 범위지정 -->
     </fieldset>
     <fieldset>
         <legend>배송 정보</legend>
