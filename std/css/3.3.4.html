@@ -10,7 +10,7 @@
             /* *=all모든 전체 선택자 */
             margin: 0;
         }
-        hi{
+        h1{
             /* 타입 선택자 */
             color: blue;
         }
@@ -24,9 +24,11 @@
             font-size: xx-large;
         }
         p,
-        em{
+        em,
+        h1{
             /* 그룹 선택자 */
             font-size: 50px;
+            /* 계단식 적용방식으로 인해 중복식 맨마지막 명령어 적용 */
         }
     </style>
 </head>
