@@ -7,10 +7,71 @@
     <title>Document</title>
     <style>
         h1{
-            color: rgb(255, 0, 0);
+            color: rgba(255, 0, 0, 0.9);
+            /* 알파는 0~1들어감 투명도 설정 */
         }
         p{
-            color: #f00;
+            color: #0400ff;
+            /* 16지수 컬러 피커 */
+        }
+        .p1{
+            color: hsla(100% , 0% , 0% , 1);
+        }
+        .p_lf{
+            text-align: left;
+        }
+        .p_rt{
+            text-align: right;
+        }
+        .p_mid{
+            text-align: center;
+            background-color: rgb(200, 200, 200);
+            height: 300px;
+            line-height: 300px;
+        }
+        .p_mp{
+            text-align: match-parent;
+        }
+        .p_lp{
+            line-height: 20px;
+        }
+        .p_lpem{
+            line-height: 2em;
+        }
+        .p_lprem{
+            line-height: 3rem;
+        }
+        .em{
+            line-height: 15px;
+        }
+        .p_dcn{
+            text-decoration: none;
+            /* 상호작용으로 인한 없에기 자바스크립배울때 용의나게 쓸꺼같음 */
+        }
+        .p_dcul{
+            text-decoration: underline;
+        }
+        .p_dclt{
+            text-decoration: line-through;
+        }
+        .p_sd{
+            text-shadow: -10px 5px 3px rgb(0, 0, 100) ;
+            /* 가로 세로 번짐 색깔 */
+        }
+        .p_trflw{
+            text-transform: lowercase;
+        }
+        .p_trfcp{
+            text-transform:capitalize;
+        }
+        .p_trffw{
+            text-transform:full-width;
+        }
+        .p_ls{
+            letter-spacing: 10px;
+        }
+        .p_ws{
+            word-spacing: 10px;
         }
     </style>
 </head>
@@ -18,6 +79,46 @@
     <div>
         <h1>폰트 색깔</h1>
         <p>테스트용 1</p>
+        <p class="p1">테스트용 1</p>
+        <p class="p2">테스트용 1</p>
+    </div>
+
+    <div>
+        <p class="p_lf">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
+        <hr>
+        <p class="p_rt">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
+        <hr>
+        <p class="p_mid">가나다라마바사아자차카타파하</p>
+        <hr>
+        <p class="p_mp">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
+    </div>
+
+    <div class="em">
+        <p>테스트용</p>
+        <p class="p_lp">테스트용 높이</p>
+        <p class="p_lpem">테스트용 높이</p>
+        <p class="p_lprem">테스트용 높이</p>
+    </div>
+
+    <div>
+        <p>테스트용</p>
+        <p class="p_dcn">테스트용 높이</p>
+        <p class="p_dcul">테스트용 높이</p>
+        <p class="p_dclt">테스트용 높이</p>
+    </div>
+
+    <div>
+        <p>테스트용</p>
+        <p class="p_sd">테스트용 높이</p>
+        <p class="p_trf">테스트용 높이abcABC</p>
+        <p class="p_trfcp">테스트용 높이abcABC</p>
+        <p class="p_trffw">테스트용 높이abcABC</p>
+    </div>
+
+    <div>
+        <p>테스트용 높이</p>
+        <p class="p_ls">테스트용 높이</p>
+        <p class="p_ws">테스트용 높이</p>
     </div>
 </body>
 </html>
