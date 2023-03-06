@@ -1,0 +1,22 @@
+h1{
+    color: red !important; 
+}
+/* !important 가장높은 우선순위 !important 끼리는 기존 우선순위 영향을 받음 */
+.h1-1 {
+    color: orange ;
+}
+#h1-id {
+    color: violet ;
+}
+h2{
+    color: blueviolet;
+}
+h2{
+    color:brown;
+}
+.container_2{
+    color: yellow;
+}
+.h1-2{
+    color: black;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red !important; 
+        }
+        /* !important 가장높은 우선순위 !important 끼리는 기존 우선순위 영향을 받음 */
+        .h1-1 {
+            color: orange ;
+        }
+        #h1-id {
+            color: violet ;
+        }
+        h2{
+            color: blueviolet;
+        }
+        h2{
+            color:brown;
+        }
+        .container_2{
+            color: yellow;
+        }
+        .h1-2{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="h1-1" id="h1-id" style="color: aqua;">
+            적용 순위
+        </h1>
+        <h2>
+            적용 순서
+        </h2>
+    </div>
+
+    <div class="container_2">
+        <h2 class="h1-2">
+            스타일 상속
+            <!-- 스타일상속이 타입스타일보다 우선순위 낮음 -->
+        </h2>
+        <h3>
+            스타일 상속
+        </h3>
+    </div>
+</body>
+</html>

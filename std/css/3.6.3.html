@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-family:'asdafw','바탕';
+            /* 앞명령어가 우선순위 갖임 앞에 폰트가 없을 경우 뒷 폰트가 적용 */
+        }
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:100%;
+        }
+        .p1{
+            font-size: medium;
+        }
+        .p1_px{
+            font-size: 5px;
+        }
+        .p1_w{
+            font-weight: normal;
+        }
+        .p2{
+            font-size: large;
+        }
+        .p2_em{
+            font-size: 5em;
+            /* 부모의 크기의 배율 */
+        }
+        .p2_w{
+            font-weight: bold;
+        }
+        .p3{
+            font-size: larger;
+        }
+        .p3_rem{
+            font-size: 5rem;
+            /* 최상위의 요소의 배율 */
+        }
+        .p3_w{
+            font-weight: lighter;
+        }
+        .p4{
+            font-size: x-large;
+        }
+        .p4_w{
+            font-weight: 400;
+            /* 기본크기 400 min 100 ~ max 900 */
+        }
+        html{
+            font-size: 2px;
+        }
+        div{
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>글자 폰트 변경</h1>
+        <!-- 디폴트 값 맑은 고딕 값이 없을 경우 디폴트 값으로 -->
+        <p>글꼴 관련 스타일abcdefg</p>
+        <p class="p1">글꼴 관련 스타일abcdefg med</p>
+        <p class="p2">글꼴 관련 스타일abcdefg lag</p>
+        <p class="p3">글꼴 관련 스타일abcdefg lager</p>
+        <p class="p4">글꼴 관련 스타일abcdefg xlag</p>
+    </div>
+
+    <div>
+        <h1>글자 폰트 변경</h1>
+        <!-- 디폴트 값 맑은 고딕 값이 없을 경우 디폴트 값으로 -->
+        <p>글꼴 관련 스타일abcdefg</p>
+        <p class="p1_px">글꼴 관련 스타일abcdefg px</p>
+        <p class="p2_em">글꼴 관련 스타일abcdefg em</p>
+        <p class="p3_rem">글꼴 관련 스타일abcdefg rem</p>
+        <p class="p4">글꼴 관련 스타일abcdefg</p>
+    </div>
+
+    <div>
+        <h1>글자 폰트 변경</h1>
+        <!-- 디폴트 값 맑은 고딕 값이 없을 경우 디폴트 값으로 -->
+        <p>글꼴 관련 스타일abcdefg</p>
+        <p class="p1_w">글꼴 관련 스타일abcdefg normal</p>
+        <p class="p2_w">글꼴 관련 스타일abcdefg bold</p>
+        <p class="p3_w">글꼴 관련 스타일abcdefg lighter</p>
+        <p class="p4_w">글꼴 관련 스타일abcdefg 400</p>
+    </div>
+    
+    </body>
+</html>
