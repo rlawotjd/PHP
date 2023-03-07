@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .magn1{
+            border: 1px solid #000;
+            margin: 30px 20px 0px 0px;
+        }
+        .magn2{
+            border: 1px solid #000;
+            margin: 40px 10px 20px 30px;
+            /* 위아래로만 마진끼리 겹침 마진중첩효과 */
+        }
+        .magn3{
+            border: 1px solid #000;
+            margin: 0px 10px 20px 30px;
+            /* 마진끼리 겹침 마진중첩효과 */
+        }
+        .pad1{
+            border: 1px solid #000;
+            padding: 10px 20px 30px 40px;
+        }
+        #bor{
+            border: 1px solid #000;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="magn1">
+        <h1>마진1</h1>
+        <p>외부여부을 지정합니다</p>
+    </div>
+    <div class="magn2">
+        <h1>마진2</h1>
+        <p>외부여부을 지정합니다</p>
+    </div>
+    <div class="magn3">
+        <h1>마진3</h1>
+        <p>외부여부을 지정합니다</p>
+    </div>
+    <div class="pad1">
+        <h1 id="bor">패딩</h1>
+        <p id="bor">컨탠츠 외부를 지정합니다</p>
+    </div>
+</body>
+</html>

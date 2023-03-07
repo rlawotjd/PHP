@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxsd{
+            border: 1px solid #000;
+            box-shadow: 5px 10px 15px 1px #00000069;
+            /* 그림자 좌우 상하 번짐 영영 */
+        }
+        .bord1{
+            border: solid #000;
+            /* 디폴트 굵기 5px */
+            border-width: 1px 5px 10px 15px;
+            /* 위 우 아 좌 시계반향 */
+            border-color: #0000ff #f00 #0f0 #000;
+            border-radius: 100%;
+        }
+        .bord2{
+            border-style: none;
+        }
+        .bord3{
+            border-style: double;
+            border-top-left-radius: 100%;
+        }
+        .bord4{
+            border-style: dotted;
+        }
+        .bord5{
+            border-style: dashed;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxsd">박스그림자</div>
+    <br>
+    <div class="bord1">테두리실선 솔리드</div>
+    <br>
+    <div class="bord2">테두리none</div>
+    <br>
+    <div class="bord3">테두리두줄 더블</div>
+    <br>
+    <div class="bord4">테두리점선 도티드</div>
+    <br>
+    <div class="bord5">테두리점선 데쉬드</div>
+
+</body>
+</html>

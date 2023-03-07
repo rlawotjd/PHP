@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 2em;
+            text-align: center;
+            width: 1200px;
+            /* 이게뭐냐고 */
+            height: 820px;
+            margin: 0;
+            padding: 0;
+        }
+        header,
+        aside,
+        main,
+        footer{
+            border: 5px solid #000;
+            box-sizing: border-box;
+            /* 왜 볼덜박스이지? 컨튼츠박스가아니고?*/
+        }
+        header{
+            width: 1200px;
+            height: 120px;
+            background-color: #777;
+            line-height: 120px;
+        }
+        aside{
+            height: 600px;
+            background-color: #55f;
+        }
+        .lf{
+            line-height: 600px;
+            width: 250px;
+            float: left;
+        }
+        .rt{
+            line-height: 300px;
+            width: 150px;
+            float: right;
+        }
+        main{
+            width: 1050px;
+            /* ??이게맞나 마진 중첩효과랑 같은건가? */
+            height: 600px;
+            line-height: 600px;
+        }
+        footer{
+            width: 1200px;
+            height: 100px;
+            background-color: #777;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header>헤더</header>
+        <aside class="lf">사이드바 lf</aside>
+        <aside class="rt">사이드바 rt</aside>
+        <main>본문</main>
+        <footer>푸터</footer>
+    </div>
+</body>
+</html>

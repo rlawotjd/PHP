@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .art1{
+            border: 3px solid #f00;
+            display: none;
+        }
+        .art2{
+            border: 3px solid rgb(255, 145, 0);
+            display:block;
+        }
+        .art3{
+            border: 3px solid rgb(255, 145, 0);
+            display:inline-block;
+        }
+        .brd{
+            border: 1px solid #f00;
+        }
+        div{
+            border: 1px solid #0f0;
+        }
+        span{
+            border: 1px solid #00f;
+        }
+        .art3>div,
+        .art3>span{
+            display: inline-block;
+        }
+        .art4>div,
+        art4>span{
+            height: 100px;
+            width: 500px;
+        }
+        .art5>div,
+        art5>span{
+            height: 100px;
+            width: 500px;
+        }
+        .art5{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <article class="art1">
+        <h1>display none</h1>
+        <div class="">div tag1</div>
+        <div class="">div tag2</div>
+    </article>
+    <article class="art2">
+        <h1>display none</h1>
+        <div class="">div tag1</div>
+        <div class="">div tag2</div>
+    </article>
+    <article class="art3">
+        <span> display none</span>
+        <div class="">div tag1</div>
+        <div class="">div tag2</div>
+    </article>
+    <span class="art3">inline</span>
+    <a href="" class="brd">a</a>
+    
+    <article class="art3">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+    </article>
+
+    <article class="art4">
+        <div>div14</div>
+        <div>div24</div>
+        <div>div34</div>
+        <span>14</span><span>24</span><span>34</span><span>44</span><span>54</span>
+    </article>
+    <article class="art5">
+        <div>div15</div>
+        <div>div25</div>
+        <div>div35</div>
+        <span>15</span><span>25</span><span>35</span><span>45</span><span>55</span>
+    </article>
+
+</body>
+</html>
