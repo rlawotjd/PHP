@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgc{
+            border: 10px dashed #000;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            background-clip: content-box;
+            background-color: #f00;
+        }
+        .bgi{
+            background-image: url('../media/img.3.02.png'),url('../../test/images/mic.jpg');
+            /* url함수 특별한거 처리위한 여러게 설정가능 */
+            /* 따움표 넣은 이유 특수 문자 및 스페이스바 있는경우 에러로 못불러낼수있음 */
+            width: 100px;
+            height: 100px;
+        }
+        .bgr{
+            background-image: url('../media/what.jpg');
+            background-repeat: repeat;
+            width: 200px;
+            height: 100px;
+        }
+        /* .bgrv{
+            background-image: url('../media/bard.jpg');
+            /* 바디에 넣어모든화면 이미지 넣기
+        } */
+        .bgp{
+            background-image: url('../media/cat.jpg');
+            /* background-position: 40% 70%; */
+            background-position: top 100px right 200px;
+            background-repeat: no-repeat;
+            width: 300px;
+            height: 300px;
+            /* 이미지기준위치 */
+        }
+        .bgs{
+            background-image: url('../media/cat.jpg');
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            /* 보여지는 꽉찬 화면으로 */
+            background-size: contain;
+            /* 이미지 기준 꽉찬 화면 */
+            
+        }
+        .bgaf{
+            background-image: url('../media/cat.jpg');
+            width: 300px;
+            height: 300px;
+            display: inline-block;
+            background-attachment: fixed;
+            border: 1px solid #000;
+            overflow: scroll;
+        }
+        .bgas{
+            background-image: url('../media/cat.jpg');
+            width: 300px;
+            height: 300px;
+            background-attachment:scroll;
+            display: inline-block;
+            border: 1px solid #000;
+            overflow: scroll;
+        }
+        .bgal{
+            background-image: url('../media/cat.jpg');
+            width: 300px;
+            height: 300px;
+            background-attachment:local;
+            display: inline-block;
+            border: 1px solid #000;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body class="bgrv">
+    <h1 class="bgc">백그라운드 커럴</h1>
+    <h1 class="bgi">백그라운드 이미지</h1>
+    <h1 class="bgr">백그라운드 리피트</h1>
+    <h1 class="bgp">백그라운드 포지션</h1>
+    <h1 class="bgs">백그라운드 사이즈</h1>
+    <h1 class="bgaf">백그라운드 어태치뭔트 픽시드백그라운드 어태치뭔트 픽시드백그라운드 어태치뭔트 픽시드백그라운드 어태치뭔트 픽시드백그라운드 어태치뭔트 픽시드백그라운드 어태치뭔트 픽시드</h1>
+    <h1 class="bgas">백그라운드 어태치뭔트 스크롤백그라운드 어태치뭔트 스크롤백그라운드 어태치뭔트 스크롤백그라운드 어태치뭔트 스크롤백그라운드 어태치뭔트 스크롤백그라운드 어태치뭔트 스크롤</h1>
+    <h1 class="bgal">백그라운드 어태치뭔트 로컬백그라운드 어태치뭔트 로컬백그라운드 어태치뭔트 로컬백그라운드 어태치뭔트 로컬백그라운드 어태치뭔트 로컬백그라운드 어태치뭔트 로컬</h1>
+    
+</body>
+</html>  

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            margin: 100px;
+        }
+        body{
+            margin: 100px;
+        }
+        h1{
+            background-color: #111;
+            position: sticky;
+        }
+        section{
+            background-color: #f22;
+            padding: 20px;
+            position: relative;
+        }
+        article{
+            background-color: #3f3;
+            padding: 40px;
+            height: 5000px;
+        }
+        .divstatic{
+            background-color: #44f;
+            position: static;
+            top: 0;
+        }
+        .divrelative{
+            background-color: #f5f;
+            position: relative;
+            right: 10px;
+        }
+        .divabsolut{
+            background-color: #6ff;
+            position: absolute;
+            top: 0;
+            /* relativ 기준으로 움직임 */
+        }
+        .divfixed{
+            background-color: #ff7;
+            position: fixed;
+            bottom: 10px;
+        }
+        .divsticky{
+            background-color: rgb(255, 196, 232);
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="pos1">
+        <h1>
+            가나다
+            <section>가나다
+                <article>가나다
+                    <div class="divstatic">이건뭐냐</div>
+                    <div class="divrelative">본인기준으로 이동</div>
+                    <div class="divabsolut">absolut = 부모relative>sticky 기준으로 이동</div>
+                    <div class="divfixed">
+                        <input type="reset" name="" id="top">
+                        <label for="top">
+                        뷰포트 기준으로 무빙 divfixed
+                        </label>
+                        </div>
+                    <div class="divsticky">sticky 부모기준 위치</div>
+                </article>
+            </section>
+        </h1>
+    </div>
+</body>
+</html>

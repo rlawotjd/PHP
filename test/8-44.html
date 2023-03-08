@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid #000;
+            display: inline-block;
+            width: 500px;
+            position: sticky;
+        }
+        main{
+            border: 1px solid #000;
+            width: 2000px;
+            height: 1000px;
+            position:relative;
+        }
+        #pos1{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        #pos2{
+            position: absolute;
+            top: 100px;
+            right: 100px;
+        }
+        #pos3{
+            position: absolute;
+            bottom: 100px;
+            left: 100px;
+        }
+        .pos1{
+            position: sticky;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header id="pos1">
+            <div id="">
+                <p>
+                    Lorem ipsum dolor sit amet, consecteture adipiscing elit, sed diam nonummy nibg euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+                </p>
+            </div>
+            <div class=".pos1">
+                <p>#pos1</p>
+            </div>
+        </header>
+            <div id="pos2">
+                <p>
+                    Lorem ipsum dolor sit amet, consecteture adipiscing elit, sed diam nonummy nibg euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+                </p>
+            </div>
+        <div id="pos3">
+            <p>
+                Lorem ipsum dolor sit amet, consecteture adipiscing elit, sed diam nonummy nibg euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+            </p>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px; height: 300px;
+            border: 1px solid #000;
+        }
+        .lg{
+            background: linear-gradient(45deg , #f00, #e90, #ff0, #0f0, #00f 75%, #c0f );
+            /* deg 각도 */
+        }
+        .rg{
+            background: radial-gradient(circle farthest-corner at 0% 20%, #f00, #e90, #ff0, #0f0, #00f, #c0f );
+            /* 크기설정 그냥 색 퍼센트로 하면 안되나 엠닛기능도 없는데...*/
+            /* farthest 원의 중심에서가장먼 closeset 원중심 기준에서 가장 가까운corner꼭지점 기준 side면기준 */
+        }
+    </style>
+</head>
+<body>
+    <div class="lg">
+        <h1>라이너 그라데이션</h1>
+        <p>보노보노야</p>
+    </div>
+    <div class="rg">
+        <h1>라이너 그라데이션</h1>
+        <p>보노보노야</p>
+    </div>
+</body>
+</html>

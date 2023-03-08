@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            border: 1px solid #000;
+            width: 4000px;
+            height: 2000px;
+            padding: 10px;
+        }
+        div{
+            border: 1px dotted #000;
+            background-color: rgba(188, 250, 250, 0.658);
+            width: 500px;
+            height: 400px;
+        }
+        aside{
+            background-color: #000;
+            width: 100px;
+            height: 100px;
+        }
+        #static{
+            position: static;
+        }
+        #relativ-1{
+            position: relative;
+            top: 10px;
+        }
+        #relativ-2{
+            position: relative;
+            bottom: 20px;
+            left: 100px;
+        }
+        #fixed{
+            position: fixed;
+            right: 10px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="static">
+            <p>
+                ex et adipisicing volutpat aliquam cupidatat nulla. Laboris est sint sit aliqua enim. Aute Lorem eu sint aute sunt proident. Do culpa consentetur elit duis laboris reprehenderit incididunt nulla. Pariatur fugiat voluptate ea non amet cupidatat.
+            </p>
+        </div>
+        <div id="relativ-1">
+            <p>
+                ex et adipisicing volutpat aliquam cupidatat nulla. Laboris est sint sit aliqua enim. Aute Lorem eu sint aute sunt proident. Do culpa consentetur elit duis laboris reprehenderit incididunt nulla. Pariatur fugiat voluptate ea non amet cupidatat.
+            </p>
+        </div>
+        <div id="relativ-2">
+            <p>
+                ex et adipisicing volutpat aliquam cupidatat nulla. Laboris est sint sit aliqua enim. Aute Lorem eu sint aute sunt proident. Do culpa consentetur elit duis laboris reprehenderit incididunt nulla. Pariatur fugiat voluptate ea non amet cupidatat.
+            </p>
+        </div>
+        <aside id="fixed">box</aside>
+    </main>
+</body>
+</html>
