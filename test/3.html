@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            background-image: url('../std/media/what.jpg');
+            background-size: cover;
+
+        }
+        legend{
+            font-size: 2em;
+            color: purple;
+        }
+        .req>input
+        ,textarea{
+            background-color: #00000000;
+        }
+        .req::before{
+            content: '*';
+            color: red;
+        }
+        .sub_text>input,
+        .fl{
+            float: left;
+            margin: 0 10px 0 0;
+        }
+        .tw{
+        display: none;
+        margin: 0;
+        background-color: black;
+        color:#fff;
+        padding: 0 5px 0 5px;
+        }
+        .sub_text>input:hover + .tw{
+            display: inline-block;
+        }
+        input:focus
+        ,textarea:focus{
+            border: 3px solid red;
+        }
+        .txr>input:focus+label{
+            color: red;
+        }
+        .txr>input:focus{
+            accent-color: red;
+        }
+        input,
+        input:link,
+        input:visited,
+        input:focus,
+        textarea{
+        box-sizing: border-box;
+        outline: none;
+        /* height: 100px; */
+        }
+        .resn>textarea{
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>I want YOU!</legend>
+            <div class="req">
+                <label for="name">이름</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="req">
+                <label for="year">나이</label>
+                <input type="number" name="year" id="year" min="20" required >
+            </div>
+            <div class="req txr">
+                <label for="m">성별</label>
+                <input type="radio" name="sex" id="m" required>
+                <label for="m">남자</label>
+                <input type="radio" name="sex" id="wm">
+                <label for="wm">여자</label>
+            </div>
+            <div class="resn">
+                <label for="want" class="fl">요청사항</label>
+                <textarea name="want" id="want" cols="30" rows="10" placeholder="요청 사항 입력" ></textarea>
+            </div>
+            <div class="sub_text">
+                <label for="submit" hidden>보내기</label>
+                <input type="submit" name="submin" id="submit" value="보내기" >
+                <p class="tw">내용을 다시 한번 확인해 주세요</p>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

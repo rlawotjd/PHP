@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header>span{
+            color: blue;
+        }
+        header span{
+            color: #c7bbff;
+            font-size: xx-small;
+        }
+        header>span{
+            font-size:xx-large;
+        }
+        p + span{
+            color: aquamarine;
+            /* 연속되는 테그끼리 연결 후자에 적용 느낌이 딱 안쓸꺼같음*/
+        }
+        .div3~span{
+            color: brown;
+        }
+        /* 형제의요소끼리 적옹 전부 적용 */
+        a[target]{
+            color: #0f0;
+            /* 속성들어가면적용 */
+        }
+        [class=att_class]{
+            font-size: 25px;
+            /* 속성과속성명이같으면적용 */
+        }
+        [class~=att]{
+            font-weight: 900;
+        }
+        [class|=att2]{
+            color: #fff;
+            /* 속성값이 완전일치 적용 */
+            /* 하이푼인요소 */
+        }
+        [class^=att2]{
+            background-color: blue;
+            /* 특정단어로 시작되는 선택되는 값 */
+            }
+        [class*=att2]{
+            font-size: 30px;
+            /* 특정단어로 포함되는 선택되는 값 */
+            }
+        [class$=att2]{
+            font-size: 40px;
+            /* 특정단어가 마지막되는 선택되는 값 */
+            }
+            
+    </style>
+</head>
+<body>
+    <header>
+        <div class="">
+            <span>header>div>span디바의 자식스판</span>
+        </div>
+        <span>header>span 해더의 자식스판</span>
+    </header>
+    <span>span</span>
+    <main>
+        <div class="">
+            <span>main>div>span디바의 자식스판</span>
+        </div>
+        <span>main>span 매인의 자식스판1</span>
+        <p>main>p 매인의 자식피</p>
+        <span>main>span 매인의 자식스판2</span>
+        <span>main>span 매인의 자식스판3</span>
+        <span>main>span 매인의 자식스판4</span>
+    </main>
+    <aside>
+        <div class="div3">
+            <span>aside>div>span디바의 자식스판</span>
+        </div>
+        <span>aside>>span 사이드의 자식스판1</span>
+        <p>aside>p 사이드의 자식피</p>
+        <span>aside>span 사이드의 자식스판2</span>
+        <span>aside>span 사이드의 자식스판3</span>
+        <span>aside>span 사이드의 자식스판4</span>
+        <span class="att_class">aside>span 사이드의 자식스판5</span>
+        <span class="att div3">aside>span 사이드의 자식스판6</span>
+        <div>
+            <span class="att2-ddddd" >aside>span 사이드의 자식스판7</span>
+            <span class="att2ddddd" >aside>span 사이드의 자식스판7</span>
+            <span class="ddatt2dd" >aside>span 사이드의 자식스판7</span>
+            <span class="ddatt2" >aside>span 사이드의 자식스판7</span>
+            <h1>가나다</h1>
+        </div>
+    </aside>
+    <a href="../media/what.jpg" target="_self">what</a>
+</body>
+</html>

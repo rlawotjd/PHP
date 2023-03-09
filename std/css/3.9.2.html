@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        :link : 단한번이라도 방문하지않는 요소에만 스타일 적용
+        :visited :방문했어도 스티일적용
+        :hover :마우스를 올려놨을때
+        :active :크릭했을때
+        :focus : 포커스받은 요서의 스타일정용
+        순서 중요
+        :taeget: 앵커 대상에 스타일 적용
+        :nth-child(n): n번째 자식 스타일적용
+        s&:nth-of-type(n) : S타입의 n번째 스타일적용
+        :not(selector) : 자식중 선택자아닌것만 적용
+        ::first-letter : 문단의 첫글자만적용
+        ::first-line : 뷰기준 문단의 첫줄만적용
+        ::after : 기준 뒤에 스타일적용
+        ::before :  기준 앞에 스타일작용
+        ::selection : 드레그스타일적용
+        */
+        ul li{
+            list-style-type: none;
+            display: inline-block;
+            float: left;
+            text-align: center; line-height: 100px;
+            width: 200px; height: 100px;
+            margin: 10px;
+        }
+        nav{
+            width: 700px; height: 110px;
+            background-color: rgb(255, 137, 157);
+        }
+        a:link{
+            color: rgb(0, 153, 255);
+        }
+        a:visited{
+            color: lightgreen;
+        }
+        a:hover{
+            width: 200px; height: 100px;
+            background-color: rgb(139, 0, 0);
+        }
+        input:focus{
+            border: 1px solid purple;
+            outline: none;
+            border-radius: 5%;
+        }
+        a:active{
+            background-color: red;
+        }
+        #target_1:target{
+            background-color: blanchedalmond;
+        }
+        .container div :nth-child(odd){
+            background-color: azure;
+            /* odd even 홀 짝 */
+        }
+        .container div p:nth-of-type(1){
+            background-color: red;
+        }
+        .container div:not(p){
+            font-size: 60px;
+        }
+        .container2 .pf_1::first-letter{
+            background-color: blueviolet;
+        }
+        .container2 .pf_2::first-line{
+            background-color: blueviolet;
+        }
+        .pf_2>span::before{
+            content: '중요';
+            color: #f00;
+        }
+        .pf_2>span::after{
+            content: '중요';
+            color: #f00;
+        }
+        .container2 p::selection{
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://naver.com">naver</a>
+    <a href="https://gogle.com">gogle</a>
+    <nav>
+        <ul>
+            <li>
+                <a href="https://naver.com">메뉴1</a>
+            </li>
+            <li>
+                <a href="https://google.com">메뉴2</a>
+            </li>
+            <li>
+                <a href="https://daum.com">daum</a>
+            </li>
+            <li>
+                <a href="#target_1">daum</a>
+            </li>
+        </ul>
+    </nav>
+    <br>
+    <label for="id">아이디</label>
+    <input type="text" name="" id="id">
+    <br>
+    <span id="target_1">타겟 테스트</span>
+    <fieldset>
+        <legend>구조가상 클래스</legend>
+        <div class="container">
+            <h2>h2_1</h2>
+            <p>p_1</p>
+            <p>p_2</p>
+            <h2>h2_2</h2>
+            <p>p_3</p>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>구조가상 요소</legend>
+        <div class="container2">
+            <h2>h2_1</h2>
+            <p class="pf_1">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나</p>
+            <p class="pf_2">가나다라마바사아자<span>에비시디</span> 차카타파하가나다라마바사아자차카타파하가나</p>
+            <h2>h2_2</h2>
+            <p>p_3</p>
+        </div>
+    </fieldset>
+</body>
+</html>
