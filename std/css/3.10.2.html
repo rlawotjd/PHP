@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+        }
+        .flex_container{
+            background-color: #555;
+            width: 60vw; height: 60vh;
+            display: flex;
+            /* 플렉싀 디폴트값 */
+            flex-direction:column-reverse;
+            /* 주축의 방향을 정해줌 */
+            flex-wrap:wrap-reverse;
+            /* 항목의 줄변경 */
+            /* flex-flow: column-reverse wrap-reverse; */
+            /* 한번에 위에 두게 설정 가능 */
+            
+            justify-content: space-around;
+            /* 주축의 방향을 기준으로 정렬 */
+            align-items: center;
+            /* 주축의 기준으로 정령 */
+            
+        }
+        #full{
+            align-self: stretch;
+        }
+        .flex_item{
+            border: 1px solid #000;
+            height: 5vw;width: 5vw;
+            background-color: #55f;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex_container">
+        <div class="flex_item">1</div>
+        <div class="flex_item">2</div>
+        <div class="flex_item">3</div>
+        <div class="flex_item" id="full">4</div>
+        <div class="flex_item">5</div>
+    </div>
+</body>
+</html>
