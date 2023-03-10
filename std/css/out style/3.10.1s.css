@@ -1,0 +1,5 @@
+@media(max-width: 500px){
+    p{
+        background-color: rgb(255, 255, 0);
+    }
+}
