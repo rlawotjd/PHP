@@ -21,22 +21,25 @@
             /* flex-flow: column-reverse wrap-reverse; */
             /* 한번에 위에 두게 설정 가능 */
             
-            justify-content: space-around;
+            justify-content: space-between;
             /* 주축의 방향을 기준으로 정렬 */
-            align-items: center;
+            align-items: flex-end;
             /* 주축의 기준으로 정령 */
-            
+            /* align-content: center; */
         }
         .flex_item{
             border: 1px solid #000;
             height: 5vw;width: 5vw;
             background-color: #55f;
         }
-        .full{
-            width: auto;
+        div:nth-child(3){
+            width: auto; 
             align-self: stretch;
+            /* 특정 항목만 주축방향으로 정렬 */
             background-color: #55f;
         }
+        
+
     </style>
 </head>
 <body>
@@ -44,7 +47,7 @@
         <div class="flex_item">1</div>
         <div class="flex_item">2</div>
         <div class="flex_item">3</div>
-        <div class="flex_item full">4</div>
+        <div class="flex_item">4</div>
         <div class="flex_item">5</div>
     </div>
 </body>
