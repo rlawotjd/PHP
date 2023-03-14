@@ -7,4 +7,3 @@ and avg_s<=50000;
 
 SELECT CONCAT(last_name,' ', first_name) AS full_namedept_emp
 FROM employees;
- 

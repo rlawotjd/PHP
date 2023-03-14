@@ -1,4 +1,4 @@
-
+EXPLAIN
 SELECT emp_no, first_name, last_name, gender
 FROM employees
 WHERE emp_no in(
@@ -8,6 +8,7 @@ WHERE emp_no in(
 	HAVING avg(salary)>=70000
 	)
 	;
+EXPLAIN
 SELECT emp_no, first_name, last_name, gender
 FROM employees
 WHERE emp_no = any(
