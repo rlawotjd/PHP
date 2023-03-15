@@ -82,13 +82,5 @@
 -- 	,DATE(99990909)
 -- 	)
 -- ;
-SELECT emp_no, first_name
-from employees
-WHERE emp_no IN(
-	SELECT emp_no
-	from salaries
-	GROUP BY salary
-	HAVING MIN(salary), MAX(salary)
-	)
-;
+
 

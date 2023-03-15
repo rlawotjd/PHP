@@ -1,17 +1,18 @@
--- SELECT emp_no, first_name
--- FROM employees
--- WHERE emp_no IN(
--- SELECT emp_no
--- from salaries
--- WHERE salary =(
--- 	SELECT MIN(salary)
--- 	FROM salaries)
--- OR salary=(
--- 	SELECT min(salary)
--- 	FROM salaries
--- 	)
--- AND to_date >= NOW())
--- ;
+SELECT emp_no, first_name
+FROM employees
+WHERE emp_no IN(
+SELECT emp_no
+from salaries
+WHERE salary =(
+
+	SELECT MIN(salary)
+	FROM salaries)
+OR salary=(
+	SELECT min(salary)
+	FROM salaries
+	)
+AND to_date >= NOW())
+;
 
 -- SELECT AVG(salary)
 -- FROM salaries;
