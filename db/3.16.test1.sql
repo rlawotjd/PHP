@@ -1,0 +1,97 @@
+-- 1
+-- SELECT emp.emp_no
+-- 	,CONCAT_WS(' ',last_name, first_name) AS fullname
+-- 	,tit.title
+-- FROM employees AS emp
+-- 	inner JOIN titles AS tit
+-- 	ON emp.emp_no=tit.emp_no
+-- -- 	WHERE to_date>=NOW();
+-- 	GROUP BY emp_no
+-- 	ORDER BY to_date DESC 
+-- 	LIMIT 1
+-- ;
+-- 2	
+-- SELECT emp.emp_no
+-- 	 ,emp.gender
+-- 	 ,sal.salary
+-- FROM employees AS emp
+-- 	INNER JOIN salaries AS sal
+-- 	ON emp.emp_no=sal.emp_no
+-- WHERE to_date>=NOW()
+-- ;
+-- 3 
+-- SELECT CONCAT_WS(' ',last_name, first_name) AS fullname
+-- 	,sal.salary
+-- from employees AS emp
+-- 	INNER JOIN salaries AS sal
+-- 		ON emp.emp_no=sal.emp_no
+-- WHERE emp.emp_no=10010
+-- ;
+-- 4
+-- SELECT emp.emp_no
+-- 	,CONCAT_WS(' ',last_name, first_name) AS fullname
+-- 	,d_m.dept_name
+-- FROM employees AS emp
+-- 	INNER JOIN dept_emp AS d_e
+-- 	ON emp.emp_no=d_e.emp_no
+-- 	INNER JOIN departments AS d_m
+-- 	ON d_e.dept_no=d_m.dept_no
+-- 	WHERE d_e.to_date>=NOW()
+-- 	ORDER BY emp.emp_no
+-- ;
+-- 5
+-- SELECT RANK() over(ORDER BY salary DESC ) AS rank
+-- 	,emp.emp_no
+-- 	,CONCAT_WS(' ',last_name, first_name) AS fullname
+-- 	,sal.salary
+-- FROM employees AS emp
+-- 	INNER JOIN salaries AS sal
+-- 	ON emp.emp_no=sal.emp_no
+-- 	WHERE to_date>=NOW()
+-- 	LIMIT 10;
+-- 6
+-- SELECT d_m.dept_no
+-- 	,CONCAT_WS(' ',last_name, first_name) AS fullname
+-- 	,d_m.from_date
+-- FROM dept_manager AS d_m
+--  inner join employees AS emp
+--  ON d_m.emp_no=emp.emp_no
+--  ;
+--  7
+-- SELECT AVG(sal.salary)
+-- FROM titles AS tit
+-- 	INNER JOIN salaries AS sal
+-- 		ON tit.emp_no = sal.emp_no
+-- 	WHERE tit.title='staff'
+-- 	AND sal.to_date>=NOW()
+-- ;
+-- 8
+-- SELECT CONCAT_WS(' ',last_name, first_name) AS fullname
+-- 	,d_m.from_date
+-- 	,emp.emp_no
+-- 	,d_m.dept_no
+-- 	FROM employees AS emp
+-- 		INNER JOIN dept_manager AS d_m
+-- 		ON emp.emp_no=d_m.emp_no
+-- ;
+-- 9 todo
+-- SELECT tit.title
+-- 	,FLOOR(AVG(salary))
+-- FROM titles  AS tit
+-- 	inner JOIN salaries AS sal
+-- 	ON sal.emp_no=tit.emp_no
+-- 	WHERE tit.to_date>=NOW()
+-- 	GROUP by title
+-- 	HAVING AVG(salary)>=60000
+-- 	ORDER BY AVG(salary) desc
+-- ;
+-- 10
+-- SELECT tit.title
+-- 	,COUNT(title)
+-- FROM employees AS emp
+-- 	INNER JOIN titles AS tit
+-- 	ON emp.emp_no=tit.emp_no
+-- 	WHERE emp.gender='f'
+-- 	GROUP BY title
+-- ;
+
