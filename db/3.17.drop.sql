@@ -22,5 +22,5 @@
 -- TRUNCATE TABLE test_tbl;
 -- 롤백 불가
 -- DROP TABLE test_tbl;
--- 볼백불가
+-- 록백불가
 
