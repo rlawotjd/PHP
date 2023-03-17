@@ -53,17 +53,22 @@
 -- SELECT d_m.dept_no
 -- 	,CONCAT_WS(' ',last_name, first_name) AS fullname
 -- 	,d_m.from_date
+-- 	,depm.dept_name
 -- FROM dept_manager AS d_m
---  inner join employees AS emp
---  ON d_m.emp_no=emp.emp_no
+-- 	inner join employees AS emp
+-- 		ON d_m.emp_no=emp.emp_no
+-- 	RIGHT OUTER JOIN departments AS depm
+-- 		ON d_m.dept_no = depm.dept_no
+-- -- 	WHERE to_date >= NOW()
 --  ;
 --  7
 -- SELECT AVG(sal.salary)
 -- FROM titles AS tit
 -- 	INNER JOIN salaries AS sal
 -- 		ON tit.emp_no = sal.emp_no
--- 	WHERE tit.title='staff'
+-- WHERE tit.title='staff'
 -- 	AND sal.to_date>=NOW()
+-- 	AND tit.to_date>=NOW()
 -- ;
 -- 8
 -- SELECT CONCAT_WS(' ',last_name, first_name) AS fullname
@@ -74,24 +79,27 @@
 -- 		INNER JOIN dept_manager AS d_m
 -- 		ON emp.emp_no=d_m.emp_no
 -- ;
--- 9 todo
+-- 9 
 -- SELECT tit.title
--- 	,FLOOR(AVG(salary))
+-- 	,FLOOR(AVG(salary)) AS AVG_sal
 -- FROM titles  AS tit
 -- 	inner JOIN salaries AS sal
--- 	ON sal.emp_no=tit.emp_no
+-- 		ON sal.emp_no=tit.emp_no
 -- 	WHERE tit.to_date>=NOW()
+-- 		AND sal.to_date>=NOW()
+-- -- 		아하 이게 빠졌구나
 -- 	GROUP by title
--- 	HAVING AVG(salary)>=60000
--- 	ORDER BY AVG(salary) desc
+-- 		HAVING avg_sal>=60000
+-- 	ORDER BY avg_sal desc
 -- ;
 -- 10
 -- SELECT tit.title
--- 	,COUNT(title)
+-- 	,COUNT(title) AS count_t
 -- FROM employees AS emp
 -- 	INNER JOIN titles AS tit
--- 	ON emp.emp_no=tit.emp_no
+-- 		ON emp.emp_no=tit.emp_no
 -- 	WHERE emp.gender='f'
+-- 		AND tit.to_date >=NOW()
 -- 	GROUP BY title
 -- ;
 
