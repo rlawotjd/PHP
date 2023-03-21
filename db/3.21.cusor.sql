@@ -1,0 +1,30 @@
+-- delimiter $$
+-- CREATE PROCEDURE test()
+-- BEGIN
+-- DECLARE sal INT;
+-- DECLARE sum_sal INT;
+-- DECLARE cur_sal INT;
+-- DECLARE end_row BOOLEAN DEFAULT FALSE;
+-- 
+-- DECLARE cur_sal CURSOR FOR
+-- 	SELECT salary FROM salaries WHERE emp_no =10001;
+-- 
+-- DECLARE CONTINUE handler FOR NOT FOUND
+-- 	SET end_row = TRUE;
+-- 	
+-- OPEN cur_sal;
+-- 
+-- cursor_loop : loop
+-- 	fetch cur_sal INTO sal;
+-- 
+-- if end_row then
+-- 	leave cursor_loop;
+-- END if;
+-- 
+-- 	SET sum_sal = sum_sal+sal;
+-- END loop cursor_loop;
+-- 
+-- SELECT sum_ sal;
+-- END $$
+-- delimiter ;
+

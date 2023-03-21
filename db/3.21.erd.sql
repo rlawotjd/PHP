@@ -1,0 +1,54 @@
+-- CREATE TABLE student(
+-- 	std_no INT(11)primary key
+-- 	,std_birth DATE NOT null
+-- 	,std_name VARCHAR(50) NOT null
+-- 	,std_addr VARCHAR(200) NOT null
+-- 	,std_tel char(11) NOT null
+-- 	,std_sex ENUM('1','2') NOT null
+-- 	,std_into DATE NOT NULL
+-- 	)
+-- ;
+-- ALTER TABLE student MODIFY std_no INT(11) AUTO_INCREMENT;
+-- DROP TABLE student;
+
+-- CREATE TABLE subject(
+-- 	sub_no INT(11)
+-- 	,tb_no INT(11)
+-- 	,prof_no INT(11)
+-- 	,CONSTRAINT PK_SUB PRIMARY KEY(sub_no, tb_no, prof_no)
+-- 	,sub_name VARCHAR(200)
+-- 	)
+-- ;
+
+-- CREATE TABLE textbook(
+-- 	tb_no INT(11)
+-- 	,CONSTRAINT PK_TEXTBOOK PRIMARY KEY(tb_no)
+-- 	,tb_name VARCHAR(200)
+-- 	)
+-- ;
+
+-- CREATE TABLE professor(
+-- 	prof_no INT(11)
+-- 	,CONSTRAINT PK_PROF PRIMARY KEY(prof_no)
+-- 	,porf_name VARCHAR(50)
+-- 	)
+-- ;
+
+-- CREATE TABLE grade(
+-- 	std_no INT(11)
+-- 	,sub_no INT(11)
+-- 	,CONSTRAINT PK_GRADE PRIMARY KEY(sub_no, std_no)
+-- 	,sub_scor INT(8)
+-- 	,com_date date
+-- 	)
+-- ;
+
+-- ALTER TABLE student ADD COLUMN std_graduate_date DATE;
+-- ALTER TABLE student ADD COLUMN atd_attend ENUM('0','1','2') NOT NULL;
+-- ALTER TABLE grade ADD COLUMN sub_rank INT(8);
+-- ALTER TABLE subject ADD COLUMN sub_fixnum INT(3) NOT null;
+-- ALTER TABLE subject ADD COLUMN sub_semester ENUM('0','1','2','3') NOT null;
+-- ALTER TABLE subject ADD COLUMN sub_room INT(8) NOT null;
+-- ALTER TABLE subject ADD COLUMN sub_start_time time NOT null;
+-- ALTER TABLE subject ADD COLUMN sub_end_time time NOT null;
+-- ALTER TABLE subject ADD COLUMN sub_com ENUM('y','p') NOT null;
