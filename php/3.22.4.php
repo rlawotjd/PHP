@@ -1,8 +1,8 @@
 <?php
 $val=null;
-
+var_dump($val);
 switch ($val) {
-    case $val===0:
+    case $val==0:
         echo "숫자 0입니다";
         break;
 
