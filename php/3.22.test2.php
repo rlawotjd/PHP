@@ -1,6 +1,7 @@
 <?php
-$a=200;
-($a>100 xor $a<0)?print"Err":
+// $a=200;
+// ($a>100 xor $a<0)?print"Err":print $a;
+
 if ($a==100){
     $g="A+";
 }
