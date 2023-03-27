@@ -9,15 +9,15 @@ $count=10;
 //     echo "\n";
 // }
 
-for($u=1; $u<=$count; $u++){
-    for ($i=$count-$u; $i > 0; $i--) { 
-        echo " ";
-    }
-    for ($i=0; $i < $u; $i++) { 
-        echo "*";
-    }
-    echo "\n";
-}
+// for($u=1; $u<=$count; $u++){
+//     for ($i=$count-$u; $i > 0; $i--) { 
+//         echo " ";
+//     }
+//     for ($i=0; $i < $u; $i++) { 
+//         echo "*";
+//     }
+//     echo "\n";
+// }
 
 // for($u=1; $u<=$count; $u++){
 //     for ($i=$count-$u; $i >= 0; $i--) { 
