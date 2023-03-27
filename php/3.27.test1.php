@@ -18,6 +18,18 @@
 $food_ass = array(
         "rice"=>"water1"
         ,"tea"=>"water2"
+        ,"del"=>"valval"
         ,"drink"=>"water3"
         ,"coffee"=>"water4");
-var_dump($food_ass);
+// var_dump($food_ass);
+
+foreach($food_ass as $key =>$val){
+    if($key=="del")
+    {
+        unset($food_ass[$key]);
+        // unset($key);
+    }
+    else
+    echo $key," : ",$val,"\n";
+}
+// var_dump($food_ass);
