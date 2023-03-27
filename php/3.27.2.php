@@ -25,7 +25,7 @@ echo $arr_space[3][2][1][1][0],"\n";
 $want_arr= $arr_space[3][2][1][1];
 echo $want_arr[0];
 
-// $arr_temp_3_c=array(
-//         array(9,10,11)
-//     )
-// ;
+$arr_temp_3_c=array(
+        array(9,10,11)
+    )
+;
