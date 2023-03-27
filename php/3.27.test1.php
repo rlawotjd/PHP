@@ -15,5 +15,9 @@
     // //     echo $food[$i],"\n";
     // // }
 
-$food_ass = array("rice"=>"water1","tea"=>"water2","drink"=>"water3","coffee"=>"water4");
+$food_ass = array(
+        "rice"=>"water1"
+        ,"tea"=>"water2"
+        ,"drink"=>"water3"
+        ,"coffee"=>"water4");
 var_dump($food_ass);
