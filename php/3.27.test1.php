@@ -24,7 +24,8 @@ $food_ass = array(
 // var_dump($food_ass);
 
 foreach($food_ass as $key =>$val){
-    if($key=="del")
+    if($key==="del")
+    // 느슨한 비교보단 완전비교 추천
     {
         unset($food_ass[$key]);
         // unset($key);
