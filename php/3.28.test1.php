@@ -87,4 +87,24 @@ function func_val_div()
     }
     return $div;
 }
-echo func_val_div(55,5,10);
+echo func_val_div(55,5,10),"\n";
+
+function fuc_arges_minus()
+{
+    $resert_args = func_get_args();
+    $resert_minus = null;
+
+    foreach ($resert_args as $val)
+    {
+        if(is_null($resert_minus))
+        {
+            $resert_minus=$val;
+        }
+        else
+        {
+            $resert_minus-=$val;
+        }
+    }
+    return $resert_minus;
+}
+echo fuc_arges_minus(10,3,1);
