@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header_nav{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
+        }
+        .nav{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20px,1fr));
+            grid-template-rows: repeat(auto-fit, minmax(500px,50%));
+        }
+        .manu_type1{
+            background-color: aqua;
+        }
+
+        .manu_type2{
+            background-color: blueviolet;
+        }
+        .manu_type3{
+            background-color: orange;
+        }
+        .manu_type1:hover{
+            transform: rotate(20deg) translateX(10px);
+            transition: all ease 1s;
+        }
+        .manu_type2:hover{
+            transform: rotate(20deg);
+            transition: all ease 1s;
+        }
+        .manu_type3:hover{
+            transform: rotate(20deg);
+            transition: all ease 1s;
+        }
+        .calender{
+            background-image: url(./img/img.png);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="header_nav">
+
+        <div class=nav>
+            <div class="manu_type1">
+                <p>
+                    아침
+                </p>
+            </div>
+            <div class="manu_type2">
+                <p>
+                    점심
+                </p>
+            </div>
+            <div class="manu_type3">
+                <p>
+                    저녁
+                </p>
+            </div>
+        </div>
+        <div class="calender">
+            <p>빈공간</p>
+        </div>
+    </div>
+</body>
+</html>
