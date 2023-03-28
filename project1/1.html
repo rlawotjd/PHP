@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .header_nav{
+        .main_col{
             display: grid;
             grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
+        }
+        .main_row{
+            display: grid;
+            grid-template-rows: repeat(2fr 1fr);
         }
         .nav{
             display: grid;
@@ -55,22 +59,25 @@
             background-image: url(./img/img.png);
             
         }
+        .ad{
+            background-color: blue;
+        }
     </style>
 </head>
 <body>
-    <div class="header_nav">
-
-        <div class=nav>
-            <div class="manu_type1">
-                <p>
-                    아침
-                </p>
-                <a href="" id="a" >활성화</a>
-                <label for="a"></label>
-            </div>
-            <div class="manu_type2">
-                <p>
-                    점심
+    <div class="main_row">
+        <div class="main_col">
+            <div class=nav>
+                <div class="manu_type1">
+                    <p>
+                        아침
+                    </p>
+                    <a href="" id="a" >활성화</a>
+                    <label for="a"></label>
+                </div>
+                <div class="manu_type2">
+                    <p>
+                        점심
                 </p>
             </div>
             <div class="manu_type3">
@@ -92,6 +99,15 @@
         <div class="calender">
             <p>빈공간</p>
         </div>
+    </div>
+<div class="ad">
+    <div class="asmr">
+        <p>asmr</p>
+    </div>
+    <div class="book">
+        <p>책</p>
+    </div>
+</div>
     </div>
 </body>
 </html>
