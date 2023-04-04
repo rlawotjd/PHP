@@ -57,13 +57,26 @@ $sql_dcl_1=
 //     ,":hire_date" =>date(20230403)
 // );
 
-$sql_dcl_2=
-"
-    UPDATE employees 
-    SET last_name = '길동'
-        ,first_name='홍'
-    where emp_no=555555
-";
+// $sql_dcl_2=
+// "
+//     UPDATE employees 
+//     SET last_name = '길동'
+//         ,first_name='홍'
+//     where emp_no=555555
+// ";
+
+// $sql_dcl_arr1=
+// "
+//     UPDATE employees 
+//     SET last_name = :last_name
+//         ,first_name= :first_name
+//     where emp_no= :emp_no
+// ";
+// $arr_dcl_1=array(
+//     ":last_name"    =>"길동"
+//     ,":first_name"  =>"홍"
+//     ,":emp_no"      =>555555
+// );
 
 $sql_dcl_3=
 "
@@ -72,6 +85,22 @@ $sql_dcl_3=
 "
 ;
 
+$sql_dcl_arr2=
+"
+    DELETE FROM employees
+    where emp_no=:emp_no
+"
+;
+$arr_dcl_2=array(
+    ":emp_no"   =>555555
+);
+
+/*쿼리 메소드로 하는 방법*/
+// $stemt= $obj_conn->query($sql_dml);
+// $resert=$stemt->fetchAll();
+// var_dump($resert);
+
+/*프리페얼 메소드로 하는 방법*/
 // $stmt=$obj_conn->prepare($sql_1);
 // // $stmt=$obj_conn->prepare($sql_2);
 // // $stmt=$obj_conn->prepare($sql_3);
@@ -83,6 +112,7 @@ $sql_dcl_3=
 
 // var_dump($resert);
 
+/*dml함수*/
 // function fnc_test_dml($sql)
 // {
 //     my_db_conn($obj_conn);
@@ -93,7 +123,7 @@ $sql_dcl_3=
 // }
 
 // var_dump(fnc_test_dml($sql_dml));
-
+/*dcl함수*/
 function fnc_test_dcl($sql)
 {
     my_db_conn($obj_conn);
@@ -101,7 +131,10 @@ function fnc_test_dcl($sql)
     $stmt->execute();
     $resert=$stmt->fetchAll();
     $obj_conn->commit();
+    // flush PRIVILEGES; 세션이 달라서 의미없
     return $resert;
 }
 
 var_dump(fnc_test_dcl($sql_dcl_3));
+
+
