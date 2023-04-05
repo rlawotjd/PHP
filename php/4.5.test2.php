@@ -12,7 +12,7 @@ class Food
     private $int_price;
 
     //메소드 : 클래스내 함수
-    public function __construct($param_name,$param_price)
+    public function __construct($param_name,$param_price) //new 생성시 디폴트 실행
     {
         $this->str_name= $param_name;
         $this->int_price=$param_price;
