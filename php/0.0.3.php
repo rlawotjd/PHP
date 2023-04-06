@@ -18,23 +18,8 @@
 // 6-2. 17 이상일 경우는 받지 않는다.
 //7. 1입력 : 카드 더받기, 2입력 : 카드비교, 0입력 : 게임종료
 
-// while(true) {
-// 	echo '시작';
-// 	print "\n";
-// 	fscanf(STDIN, "%d\n", $input);        
-// 	if($input === 0) {
-// 		break;
-// 	}
-// 	echo $input;
-// 	print "\n";
-// }
-// echo "끝!\n";
 
-// $ace=11;
 
-// if ($sum>21) {
-//     $ace=1;
-// }
 
 $num = array(
     "2"
@@ -60,15 +45,15 @@ $shape = array(
 
 // echo $num[0].$shape[1];
 
-for ($i=0; $i < 13; $i++) {  //전체 카드 만들기
-    for ($u=0; $u < 4; $u++) { 
+for ($i=0; $i < count($num); $i++) {  //전체 카드 만들기
+    for ($u=0; $u < count($shape); $u++) { 
         $dack[]=$num[$i].$shape[$u];
     }
 }
 
 // var_dump($dack);
 
-for ($i=0; $i < 52; $i++) { //덱 섞기
+for ($i=0; $i < count($dack); $i++) { //덱 섞기
     $shuffle_dack[$i]=$dack[rand(0,51)];
     for ($u=0; $u < $i; $u++) { 
         if ($shuffle_dack[$i]==$shuffle_dack[$u]) {
@@ -79,12 +64,12 @@ for ($i=0; $i < 52; $i++) { //덱 섞기
 
 // var_dump($shuffle_dack);
 
-for ($i=0; $i < 52; $i++) { //값으로 만듬1 문자열 자르기
+for ($i=0; $i < count($shuffle_dack); $i++) { //값으로 만듬1 문자열 자르기
     $value_1[]=mb_substr($shuffle_dack[$i],0,1);
 }
 // var_dump($value_1);
 
-for ($i=0; $i < 52; $i++) { //문자열을 int로 변경
+for ($i=0; $i < count($value_1); $i++) { //문자열을 int로 변경
     if ($value_1[$i]=="1"||$value_1[$i]=="j"||$value_1[$i]=="q"||$value_1[$i]=="k") {
         $value_2[$i]=10;
     }
@@ -96,7 +81,7 @@ for ($i=0; $i < 52; $i++) { //문자열을 int로 변경
     }
 }
 
-// var_dump($value_2);
+// var_dump($value_2); //생각 실패
 
 // function fnc_static()
 // {
@@ -105,11 +90,91 @@ for ($i=0; $i < 52; $i++) { //문자열을 int로 변경
 //     $statuc_i++;
 // }
 
-// 값을 뽑기 전에 문자열 숫자 부여 필요
-// 딜러의 카드 뽑기
+//초기값 초기화
 $sum_dil=0;
+$sum_player=0;
 $count_cad=0;
+$count_player=0;
+$count_dil=0;
+
+for ($i=0; $i < 2; $i++) { //플레이어 2장 뽑기
+    if ($value_2[$count_cad]=="a") {
+        if ($sum_player<=21) {
+            $value_2[$count_cad]=11;
+            $sum_player+=$value_2[$count_cad];
+            $count_cad++;
+        }
+        elseif ($sum_player>21) {
+            $value_2[$count_cad]=1;
+            $sum_player+=$value_2[$count_cad];
+            $count_cad++;
+        }
+        else{
+            $sum_player+=$value_2[$count_cad];
+            $count_cad++;
+        }
+    }
+}
+for ($i=0; $i < 2; $i++) { //딜러 2장 뽑기
+    if ($value_2[$count_cad]=="a") {
+        $value_2[$count_cad]=11;
+        $sum_dil+=$value_2[$count_cad];
+        $count_cad++;
+    }
+    else{
+        $sum_dil+=$value_2[$count_cad];
+        $count_cad++;
+    }
+}
+echo "플레이어",$sum_player,"\t","딜러",$sum_dil,"\t",$count_cad,"\n";
+
+//블랙잭 여부 확인
+if ($sum_dil==21) {
+    echo "딜러 승리";
+
+}
+elseif($sum_player==21){
+    echo "플레이어 승리";
+}
+
+// 값을 뽑기 전에 문자열 숫자 부여 필요
+if ($sum_player>21) {
+    echo "딜러 승리";
+}
+
+// 플레이어 카드 뽑기 끝 딜러 드로우 시작 플레이어 메커니즘필요
+// function fnc_player_draw($input)
+// {
+
+    // if ($input===1){
+        $count_player++;
+        if ($sum_player<=21) {
+            if ($value_2[$count_cad]=="a") {
+                if ($sum_player<=21) {
+                    $value_2[$count_cad]=11;
+                    $sum_player+=$value_2[$count_cad];
+                    $count_cad++;
+                }
+                elseif ($sum_player>21) {
+                    $value_2[$count_cad]=1;
+                    $sum_player+=$value_2[$count_cad];
+                    $count_cad++;
+                }
+            }
+            else{
+            $sum_player+=$value_2[$count_cad];
+            $count_cad++;
+            }
+        }
+        elseif($sum_player>21){
+        echo "딜러승리";
+            }
+    // }   
+
+// 딜러의 카드 2차 뽑기 
+
 while ($sum_dil<=17) {
+    $count_dil++;
     if ($value_2[$count_cad]=="a") {
         if ($sum_dil<=21) {
             $value_2[$count_cad]=11;
@@ -127,11 +192,40 @@ while ($sum_dil<=17) {
         $count_cad++;
     }
 }
-echo $sum_dil,"\t",$count_cad;
+echo "딜러",$sum_dil,"\t",$count_cad,"\n";
 
-//플레이어 카드 뽑기
-// $start=0;
-// while ($start <= 2) {
-//     $start++;
+if ($sum_dil>21) {
+    echo "플레이어 승리";
+}
 
+if ($sum_player<$sum_dil) {
+    echo "딜러 승리";
+}
+elseif ($sum_player>$sum_dil) {
+    echo "플레이어 승리";
+}
+elseif ($sum_player==$sum_dil){
+    if ($count_player<$count_dil) {
+        echo "플레이어 승리";
+    }
+    elseif ($count_player>$count_dil) {
+        echo "딜러 승리";
+    }
+    elseif ($count_player==$count_dil) {
+        echo "draw";
+    }
+}
+
+
+// while(true) {
+// 	echo '시작';
+// 	print "\n";
+// 	fscanf(STDIN, "%d\n", $input);        
+// 	if($input === 0) {
+// 		break;
+// 	}
+
+// 	echo $input;
+// 	print "\n";
 // }
+// echo "끝!\n";

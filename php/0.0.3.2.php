@@ -1,9 +1,9 @@
 <?php
-$arr_test=array("a","3","4");
-$sum=0;
-$sum+=$arr_test[1];
-$sum+=$arr_test[2];
-echo $sum;
+// $arr_test=array("a","3","4");
+// $sum=0;
+// $sum+=$arr_test[1];
+// $sum+=$arr_test[2];
+// echo $sum;
 // $sum+=$arr_test[0];
 // $sum+=$arr_test[2];
 // echo $sum;
@@ -26,3 +26,40 @@ echo $sum;
 // while ($a <= 10) {
 //     # code...
 // }
+
+// while(true) {
+// 	echo '시작';
+// 	print "\n";
+// 	fscanf(STDIN, "%d\n", $input);        
+// 	if($input === 0) {
+// 		break;
+// 	}
+// 	echo $input;
+// 	print "\n";
+// }
+// echo "끝!\n";
+$a=3;
+if ($a==1) {
+	echo 1,"\t",$a,"\n";
+	$a++;
+}
+elseif ($a==2) {
+	echo 2,"\t",$a,"\n";
+	$a++;
+}
+elseif ($a==3) {
+	echo 3,"\t",$a,"\n";
+	$a++;
+}
+elseif ($a==4) {
+	echo 4,"\t",$a,"\n";
+	$a++;
+}
+elseif ($a==5) {
+	echo 5,"\t",$a,"\n";
+	$a++;
+}
+elseif ($a==6) {
+	echo 6,"\t",$a,"\n";
+	$a++;
+}
