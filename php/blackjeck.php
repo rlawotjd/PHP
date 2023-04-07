@@ -60,6 +60,8 @@ for ($i=0; $i < count($value_1); $i++) { //문자열을 int로 변경
     }
 }
 
+// var_dump($value_2);
+
 $plaing_deck=0;
 $sum_dil=0;
 $sum_player=0;
@@ -71,10 +73,10 @@ $sum_temp_player=0;
 while(true) {
 	echo "시작";
 	print "\n";
-    // if ($count_cad==51) {
-    //     echo "카드소진 게임 종료";
-    //     break;
-    // }
+    if ($count_cad>=48) {
+        echo "카드소진 게임 종료";
+        break;
+    }
     if ($plaing_deck==0) {
         for ($i=0; $i < 2; $i++) { //플레이어 2장 뽑기
             if ($value_2[$count_cad]=="a") {
@@ -151,6 +153,18 @@ while(true) {
             $sum_dil=0;
             echo "\n시작\n";
         }
+        elseif ($sum_dil==21) {
+            echo "딜러 승리";
+            $plaing_deck=0;
+            $sum_player=0;
+            $sum_dil=0;
+        }
+        elseif($sum_player==21){
+            echo "플레이어 승리";
+            $plaing_deck=0;
+            $sum_player=0;
+            $sum_dil=0;
+        }
     }
     echo "\n플레이어 : ",$sum_player,"\t","딜러 : ",$sum_dil,"\n";
 	fscanf(STDIN, "%d\n", $input);        
@@ -201,8 +215,8 @@ while(true) {
             }
             else{
                 $sum_dil+=$value_2[$count_cad];
-                $count_cad++;
                 echo "딜러카드 드로우 : ",$value_2[$count_cad],"\n";
+                $count_cad++;
             }
         }
         echo "딜러 : ",$sum_dil,"\n";
