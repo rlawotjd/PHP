@@ -47,7 +47,7 @@
                 </div>
                 <div class="goal_status">
                     <div class="goal_title">
-                        <p>Today's Routine</p>
+                        <h2>Today's Routine</h2>
                     </div>
                     <div class="goal_text">
                         <p><?echo $goal_count?>/<?echo $goal_count+$taget_count?> 완료</p>
