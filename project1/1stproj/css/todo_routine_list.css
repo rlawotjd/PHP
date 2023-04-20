@@ -8,11 +8,11 @@
     background-color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
-    /* 센터설정 */
 }
 .contents_all{
     display: grid;
     gap: 20px;
+    grid-column: 2/3;
 }
 .goal_status{
     width: 327px; height: 128px; border-radius: 20px;
@@ -33,11 +33,10 @@ li{
     align-items: center;
 }
 .check_butten{
-    margin: 0 auto;
     width: 44px; height: 44px;
     background-size: 44px;
     background-image: url(../common/img/button.png);
-    
+    margin: 0 auto;
 }
 .phrase{
     color: #f6f6f6;

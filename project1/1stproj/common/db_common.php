@@ -102,6 +102,11 @@ function routin_list_info()
     ." routine_list "
     ." WHERE "
     ." date(list_now_date)=date(NOW()) "
+    ." ORDER BY "
+    ." list_done_flg "
+    ." DESC "
+    ." list_due_time "
+    ." DESC "
     ; 
 
     $conn=null;
@@ -180,14 +185,15 @@ function update_check_flg(&$param_arr)
     " UPDATE "
     ." routine_list "
     ." SET "
-    ." list_done_flg = '1' "
+    ." list_done_flg = :list_done_flg "
     ." WHERE "
     ." list_no = :list_no "
     ;
 
     $arr_prepare =
     array(
-        ":list_no" => $param_arr
+        ":list_no" => $param_arr["list_no"]
+        ,":list_done_flg" => $param_arr["list_done_flg"]
     );
     
     $conn = null;
@@ -218,13 +224,15 @@ function update_check_flg(&$param_arr)
 
 // var_dump(db_conn());
 // var_dump(insert_routine_list());
-// var_dump(routin_list_info());
+var_dump(routin_list_info());
 // $arr[]=routin_list_info();
 // print_r($arr['list_title']);
 // var_dump(routin_list_info_count(0));
 // $a = routin_list_info_count(0);
 // echo $a;
 //todo 종료
-// $arr = 3;
+// $arr[] = array("list_no"=>3);
+// $arr[] = array("list_done_flg"=>0);
+// var_dump($arr);
 // var_dump(update_check_flg($arr));
 ?>

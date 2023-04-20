@@ -22,8 +22,6 @@
 </head>
 <body>
     <div class="bg">
-        <div></div>
-        <!-- 여백의 미 -->
         <div class="contents_all">
             <head>
                 <div class="phrase">
@@ -55,7 +53,8 @@
                     <li>
                         <div class="list">
                             <div class="due_time">
-                                <?echo mb_substr($value["list_due_time"],10,6)?>
+                                <?echo mb_substr($value["list_due_time"],0,6),"00"?> 
+                                
                             </div>
                             <div class="list_title">
                                 <?echo $value["list_title"]?>
@@ -63,12 +62,12 @@
                             <?
                             if ($value["list_done_flg"]==1) {
                             ?>
-                            <div class="checked_status"></div>
+                            <a href="/1stproj/todo_check_update.php?list_no=<?echo $value["list_no"]?>&list_done_flg=<?echo $value["list_done_flg"]?>" class="checked_status"></a>
                             <?   
                             }
                             elseif ($value["list_done_flg"]==0) {
                             ?>
-                            <a href="/1stproj/check_update.php?list_no=<?echo $value["list_no"]?>" class="check_status"></a>
+                            <a href="/1stproj/todo_check_update.php?list_no=<?echo $value["list_no"]?>&list_done_flg=<?echo $value["list_done_flg"]?>" class="check_status"></a>
                             <?
                             }
                             ?>
@@ -79,9 +78,8 @@
                             ?>
                 </ul>
             </main>
-            <footer>
-                <div class='check_butten'></div>
-            </footer>
+            <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>&list_done_flg=<?echo $value["list_done_flg"]?>"><div class="check_butten">
+            </div></a>
         </div>
     </div>
 </body>
