@@ -6,8 +6,19 @@
     $list_info=routin_list_info(); //리스트 정보들
     $taget_count=routin_list_info_count(0); //체크 안한 계수
     $goal_count=routin_list_info_count(1); //완료한 계수
-    $goal_percent_temp=$goal_count/($goal_count+$taget_count)*100;
-    $goal_percent=round($goal_percent_temp,1)
+
+    if (($taget_count+$goal_count)==0) {
+        insert_routine_list();
+
+        header("Location: todo_routine_list.php");
+        exit();
+    } // 아무것도 없을 시 인포 인설트
+
+    $goal_percent_temp=$goal_count/($goal_count+$taget_count)*100; //달성률 퍼센트로 계산
+    $goal_percent=round($goal_percent_temp,1); // 소수점 2번째 자리에서 반올림
+
+    // var_dump(date("h")+3);
+    // var_dump(mb_substr($value["list_due_time"],0,2));
 ?>
 
 
@@ -48,37 +59,57 @@
             </head>
             <main>
                 <ul>
-                    <?foreach ($list_info as $value) {
+                    <?
+                    foreach ($list_info as $value) {
                         ?>
                     <li>
                         <div class="list">
+                        <?
+                        if ($value["list_done_flg"]==1) {
+                        ?>
                             <div class="due_time">
-                                <?echo mb_substr($value["list_due_time"],0,6),"00"?> 
-                                
+                                <?echo mb_substr($value["list_due_time"],0,5)?> 
                             </div>
                             <div class="list_title">
-                                <?echo $value["list_title"]?>
+                                <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>"><?echo $value["list_title"]?></a>
                             </div>
-                            <?
-                            if ($value["list_done_flg"]==1) {
-                            ?>
-                            <a href="/1stproj/todo_check_update.php?list_no=<?echo $value["list_no"]?>&list_done_flg=<?echo $value["list_done_flg"]?>" class="checked_status"></a>
+                            <a href="/1stproj/todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="checked_status"></a>
                             <?   
+                        }
+                        elseif ($value["list_done_flg"]==0) {
+                            if (mb_substr($value["list_due_time"],0,2)>=(date("h")-3)) {
+                                ?>
+                                <div class="due_time_high">
+                                    <?echo mb_substr($value["list_due_time"],0,5)?> 
+                                </div>
+                                <div class="list_title_high">
+                                    <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>"><?echo $value["list_title"]?></a>
+                                </div>
+                            <?
                             }
-                            elseif ($value["list_done_flg"]==0) {
+                            else{
                             ?>
-                            <a href="/1stproj/todo_check_update.php?list_no=<?echo $value["list_no"]?>&list_done_flg=<?echo $value["list_done_flg"]?>" class="check_status"></a>
+                                <div class="due_time">
+                                    <?echo mb_substr($value["list_due_time"],0,5)?> 
+                                </div>
+                                <div class="list_title">
+                                    <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>"><?echo $value["list_title"]?></a>
+                                </div>
                             <?
                             }
                             ?>
+                            <a href="/1stproj/todo_check_update.php?list_no=<?echo $value["list_no"]?>" class="check_status"></a>
+                        <?
+                        }
+                        ?>
                         </div>
                     </li>
-                            <?php
-                            }
-                            ?>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </main>
-            <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>&list_done_flg=<?echo $value["list_done_flg"]?>"><div class="check_butten">
+            <a href="/1stproj/todo_detail.php?list_no=<?echo $value["list_no"]?>"><div class="check_butten">
             </div></a>
         </div>
     </div>

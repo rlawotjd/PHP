@@ -84,7 +84,7 @@ function insert_routine_list()
 // 함수명      : routin_list_info
 // 기능        : 오늘 routin_list 모든정보
 // 파라미터    : 없음
-// 리턴값      : 없음
+// 리턴값      : result
 // ---------------------------------------
 
 function routin_list_info()
@@ -104,9 +104,9 @@ function routin_list_info()
     ." date(list_now_date)=date(NOW()) "
     ." ORDER BY "
     ." list_done_flg "
-    ." DESC "
-    ." list_due_time "
-    ." DESC "
+    ." ASC "
+    ." ,list_due_time "
+    ." ASC "
     ; 
 
     $conn=null;
@@ -116,17 +116,57 @@ function routin_list_info()
         $stmt=$conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        $conn->commit();
 
     } catch (EXCEPTION $e) {
         echo $e->getMessage();
-        $conn->rollback();
     }
     finally{
         $conn = null;
     }
     return $result;
 }
+
+// ---------------------------------------
+// 함수명      : list_no_info
+// 기능        : list_no 서치
+// 파라미터    : param_no
+// 리턴값      : result
+// ---------------------------------------
+
+function list_no_info(&$param_no)
+{
+
+    $sql = 
+    " SELECT "
+    ." list_no "
+    ." ,list_done_flg "
+    ." FROM "
+    ." routine_list "
+    ." WHERE "
+    ." list_no = :list_no "
+    ; 
+
+    $arr=array(
+        ":list_no" =>$param_no["list_no"]
+    );
+
+    $conn=null;
+    
+    try {
+        db_conn($conn);
+        $stmt=$conn->prepare($sql);
+        $stmt->execute($arr);
+        $result = $stmt->fetchAll();
+
+    } catch (EXCEPTION $e) {
+        echo $e->getMessage();
+    }
+    finally{
+        $conn = null;
+    }
+    return $result[0];
+}
+
 // ---------------------------------------
 // 함수명      : routin_list_info_count
 // 기능        : 오늘 routin_list 계수
@@ -224,15 +264,17 @@ function update_check_flg(&$param_arr)
 
 // var_dump(db_conn());
 // var_dump(insert_routine_list());
-var_dump(routin_list_info());
+// var_dump(routin_list_info());
 // $arr[]=routin_list_info();
 // print_r($arr['list_title']);
 // var_dump(routin_list_info_count(0));
 // $a = routin_list_info_count(0);
 // echo $a;
-//todo 종료
 // $arr[] = array("list_no"=>3);
 // $arr[] = array("list_done_flg"=>0);
 // var_dump($arr);
 // var_dump(update_check_flg($arr));
+// $a=46;
+// var_dump(list_no_info($a));
+//todo 종료
 ?>
