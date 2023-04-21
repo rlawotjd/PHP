@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,15 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-<?
-function make_space($n,$str)
-{
-    for ($i=0; $i < $n; $i++) { 
-    ?>
-    <div class="<?echo $str?>"></div>
-    <?
-    }
-}
-?>
+    멍청멍청
 </body>
 </html>

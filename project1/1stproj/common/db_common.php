@@ -45,20 +45,20 @@ function insert_routine_list()
     " INSERT INTO "
     ." routine_list "
     ." ( "
-    ." routine_no "
-	." ,list_title "
-	." ,list_contents "
-	." ,list_due_time "
+    ."      routine_no "
+	."      ,list_title "
+	."      ,list_contents "
+	."      ,list_due_time "
     ." ) "
 	." ( "
-    ." SELECT "
-	." routine_no "
-	." ,routine_title "
-	." ,routine_contents "
-	." ,routine_due_date "
-	." FROM routine_info "
-	." WHERE "
-    ." routine_del_flg='0' "
+    ."  SELECT "
+	."      routine_no "
+	."      ,routine_title "
+	."      ,routine_contents "
+	."      ,routine_due_time "
+	."  FROM routine_info "
+	."  WHERE "
+    ."      routine_del_flg='0' "
     ." ) "
     ;
 
@@ -66,9 +66,10 @@ function insert_routine_list()
     
     try {
         db_conn($conn);
-        $stmt=$conn->prepare($sql);
         $conn->beginTransaction();
+        $stmt=$conn->prepare($sql);
         $stmt->execute();
+        $result_count=$stmt->rowCount();
         $conn->commit();
         
     } catch (EXCEPTION $e) {
@@ -78,6 +79,7 @@ function insert_routine_list()
     finally{
         $conn = null;
     }
+    return $result_count;
 }
 
 // ---------------------------------------
@@ -276,5 +278,6 @@ function update_check_flg(&$param_arr)
 // var_dump(update_check_flg($arr));
 // $a=46;
 // var_dump(list_no_info($a));
+// var_dump(insert_routine_list());
 //todo 종료
 ?>
