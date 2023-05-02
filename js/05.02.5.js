@@ -59,7 +59,7 @@ for (const key in object) {
 }
 //for...of : 배열 모드 루프 가능
 object1=[5,4,3,2,8,1]
-object1.num=2;
+object1.num = 2;
 for (const iterator of object1) {
     console.log(iterator)
 }
