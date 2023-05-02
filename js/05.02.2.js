@@ -15,5 +15,5 @@ console.log(u_age);
 const gender="man";
 // const gender=
 gender="woman";
-//중복선언 불가능 재할당 불가능
+//중복선언 불가능 재할당 불가능 블록레벨 스코프
 

@@ -4,7 +4,7 @@
 
 console.log(h_test());
 console.log("6라인"+var_test); //undefine 뜸 먼저 자리 잡아준거
-console.log(let_test); //
+console.log(let_test); //undefine 으로 초기화 안됨
 console.log(const_test); //
 
 function h_test() {

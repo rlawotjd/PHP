@@ -13,12 +13,14 @@ let t_null = null;
 
 //undefined
 let t_undfine;
+// t_null==t_undfine//true
+// t_null===t_undfine//false
 
 //심볼(symbol)
 const s_const1= Symbol("symbol");
 const s_const2= Symbol("symbol");
 // s_const1===s_const2 //false
-// s_const1==s_const2 //false
+// s_const1==s_const2 //false 이건 예상 외다
 
 //--객체타입(JSON)--
 

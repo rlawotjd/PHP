@@ -9,8 +9,8 @@ function test() { //함수레벨 스코프
 }
 
 function test1(){
-    let f_test1="함수 : 테스트1"; //블록래벨 스코프
     if(true){
+        let f_test1="함수 : 테스트1"; //블록래벨 스코프
         var f_var1 = "var로 선언";
         console.log(f_test1);
     }
