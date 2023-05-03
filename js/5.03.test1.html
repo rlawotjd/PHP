@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let filename = 'javascript.log.php'
+        let slice_file=[];
+        for (let index = 0; index < filename.length; index++) {
+            var index_n=index+1
+            slice_file.push(filename.slice(index,index_n));
+        }
+        let f_c=slice_file.indexOf('.');
+        let l_c=slice_file.lastIndexOf('.');
+        let f_w1=[];
+        let m_w1=[];
+        let l_w1=[];
+        for (let index = 0; index < f_c; index++) {
+            f_w1.push(slice_file[index]);
+            
+        }
+        const f_w=f_w1.join('');
+        console.log(f_w);
+        for (let index = f_c+1; index < l_c; index++) {
+            m_w1.push(slice_file[index]);
+            
+        }
+        const m_w=m_w1.join('');
+        console.log(m_w);
+        for (let index = l_c+1; index < slice_file.length; index++) {
+            l_w1.push(slice_file[index]);
+            
+        }
+        const l_w=l_w1.join('');
+        console.log(l_w);
+        //멍청하게 문자열에도 인덱스 통하는줄 알았으면 이렇게 안했지 멍청아
+    </script>
+</body>
+</html>
