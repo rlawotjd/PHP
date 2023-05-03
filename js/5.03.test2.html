@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num =100;
+        let arr_num=[];
+        for (let index = 1; index <= num; index++) {
+            arr_num.push(index);
+        }
+
+        // arr1=arr_num.filter(function (val) {
+        //     if (val!==1) {
+        //         // if(val===2||val%2!==0)
+        //         // return true
+        //         for (let index = 0; index < arr_num.length; index++) {
+        //             if (val===index||val%index!==0) {
+        //                 return true
+        //             }
+        //         }
+        //     }
+        // })
+        
+        for (let index = 2; index < arr_num.length; index++) {
+            arr_num=arr_num.filter(function (val) {
+                if (val!==1) {
+                    if (val===index||val%index!==0) {
+                        return true
+                    }
+                    else{
+                        return false
+                    }
+                }
+                else{
+                    return false
+                }
+            })
+        }
+        alert(arr_num.join())
+    </script>
+</body>
+</html>
