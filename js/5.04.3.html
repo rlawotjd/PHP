@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a_class{
+            font-size: larger;
+        }
+        .a_class2{
+            color: skyblue;
+        }
+        .a_class3{
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Dom 실습</h1>
+    <div class="" id="div1">
+        <h2 id="subtitle">서브서브</h2>
+    </div>
+    <input type="text" id="inp_id" placeholder="디폴트">
+    <a id="a_id">aaa</a>
+    <ul>
+        <li class="none-li">짜장면</li>
+        <li class="none-li">탕수육</li>
+        <li class="none-li">짬뽕</li>
+        <li class="none-li">볶음밥</li>
+        <li class="none-li">라조기</li>
+        <li class="none-li">깐풍기</li>
+    </ul>
+
+    <script>
+        //요소를 선택 방법
+        //id : document.getElementById
+        const title =document.getElementById('title')
+        title.style.color='purple'
+        //테그명으로 선택 getElementsByTagName()
+        const li = document.getElementsByTagName('li')
+        // li[1].style.background='yellow'
+        // li[2].style.background='red'
+        for (let index = 0; index < li.length; index++) {
+            if (index%2==0) {
+                li[index].style.border='1px solid blue';
+            }
+            else if(index%2==1){
+                li[index].style.border='1px solid red';
+            }
+        }
+        // 클래스명으로 요소를 선택 getElementsByClassName()
+        const none_li = document.getElementsByClassName('none-li');
+        
+        // css 선택자로 요소를 선택하는 방법 document.querySelector 단 첫번째 하나만 가지고옴
+        const css_h1 = document.querySelector('h1')
+        const css_even = document.querySelector('li:nth-child(even)')
+        css_even.style.background='orange';
+        // const css = document.querySelector('#title')
+        //document.querySelectorAll 선택된 모든거 가지고옴
+        const css_odd = document.querySelectorAll('li:nth-child(odd)')
+        // css_odd.style.background='beige'; for문 돌려야함
+        for (let index = 0; index < css_odd.length; index++) {
+            css_odd[index].style.background='beige';
+            
+        }
+
+        //요소 조작하기 
+        // 콘텐츠 조작하는 방법
+        // title.textContent 순수한 텍스트 데이터를 전달 단 기존의 데이터를 삭제후 대입
+        title.textContent='변경완료'
+        title.textContent='<span>변경완료</span>' //span도 문자열로 저장
+
+        // title.innerHTML : HTML의 태그 인식 변경후 전달 단 기존의 데이터들 삭제후 대입
+
+        title.innerHTML='<span>inner로 변경완료</span>' 
+
+        // 요소에 속성을 추가 
+        const inp_id= document.getElementById('inp_id')
+        // inp_id.setAttribute('placeholder','셋어트리뷰트로 삽입');
+        const a_id= document.getElementById('a_id')
+        a_id.setAttribute('href','https:\\www.naver.com');
+
+        //요소의 속성 제거
+        inp_id.removeAttribute('placeholder')
+
+        //요소의 속성 추가 제거 응용
+        inp_id.addEventListener('mouseenter',function () {
+            inp_id.setAttribute('placeholder','셋어트리뷰트로 삽입');
+        })
+        inp_id.addEventListener('mouseleave',function () {
+            inp_id.removeAttribute('placeholder')
+        })
+
+        //요소의 스타일링 그거 단 인라인으로 추가된 형태로 비추천
+        a_id.style.textDecoration='none'
+
+        //클래스로 스타일 추가
+        a_id.classList.add('a_class','a_class2','a_class3')//가변 파라미터 사용가능
+        // a_id.classList.add('a_class')
+        // a_id.classList.add('a_class2')
+        // a_id.classList.add('a_class3')
+
+        //새로운 요소 만들기
+        //요소 만들기 
+        const add_li = document.createElement('li')
+        
+        add_li.innerHTML='test1';
+
+        //요소를 자식요소의 가장 마지막에 삽입
+        const ul =document.querySelector('ul')
+        // ul.appendChild(add_li);
+        const ul_1=document.getElementsByTagName('ul')
+        // ul_1[0].appendChild(add_li);
+
+        //요소를 자식요소의 특정 위치에 삽입
+        const t3_li = document.querySelector("li:nth-child(3)")
+        // ul.insertBefore(add_li,t3_li)
+        // ul_1[0].insertBefore(add_li,t3_li)
+        
+        //요소를 추가한 자식요소를 삭제
+        // add_li.remove();
+        
+        //test 라조기와 깐풍기 사이에 찹채밥과 동파육 삽입 배경색깔변경
+        const t6_li = document.querySelector("li:nth-child(6)")
+        const test1 = document.createElement('li')
+        const test2 = document.createElement('li')
+        test1.innerHTML="잡채밥"
+        test2.innerHTML="동파육"
+        ul.insertBefore(test1,t6_li)
+        ul.insertBefore(test2,t6_li)
+    </script>
+</body>
+</html>
