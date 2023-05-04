@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const w_date=new Date('2022-09-30 19:20:10');
+        const now=new Date()
+        d1_date=w_date.getTime();
+        d2_date=now.getTime();
+        del_val=Math.abs((d1_date-d2_date)/(1000*60*60*24))
+        del_val_dd=Math.ceil(del_val)
+        del_val_d=console.log( del_val_dd+"일\n");
+        del_val_m_m=Math.floor(del_val_dd/30)
+        del_val_m_d=del_val_dd%30
+        del_val_m=console.log(del_val_m_m+"개월"+del_val_m_d+"일")
+        
+    </script>
+</body>
+</html>

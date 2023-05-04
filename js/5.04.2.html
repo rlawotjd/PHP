@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Date
+        // const now = new Date(); //= Thu May 04 2023 10:36:52 GMT+0900 (한국 표준시)
+        // const now = new Date("1111-11-11 11:11:11.111"); //= Thu May 04 2023 10:36:52 GMT+0900 (한국 표준시)
+        // getFullYear() : 연도만 가지고오는 메소드
+        console.log(now.getFullYear()); // = 2023 년도를 가지고옴
+        // gdtMonth() : 월을 가지고오는 메소드 단 0~11결과 값을 뱉음
+        console.log(now.getMonth() +1); //현재 월
+        // getDate() : 날짜를 가지고오는 메소드
+        console.log(now.getDate());
+        // getDay(): 요일을 숫자로 가지고오는 메소드 일=0 월=1....토=6
+        console.log(now.getDay());
+
+        console.log(now.getUTCDay()); // 무슨차이지
+        //getTime(): 1970.01.01기준으로 몇**밀리초**가 지났는데 =타임스템프
+        console.log(now.getTime())
+        //getHours : 시간을 가지고오는 매소드
+        console.log(now.getHours())
+        //getMinutes : 분을 가지고오는 매소드
+        console.log(now.getMinutes())
+        //getSeconds : 초을 가지고오는 매소드
+        console.log(now.getSeconds())
+        //getMilliseconds : 밀리초 가지고오는 메소드
+        console.log(now.getMilliseconds())
+    </script>
+</body>
+</html>
