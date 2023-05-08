@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
+        .div1{
+            width: 200px; height: 200px;
+            background-color: aqua;
+        }
     </style>
 </head>
 <body>
@@ -19,12 +22,45 @@
     <br>
     <br>
     <button type="button" id="btn1">구글</button>
+    <br>
+    <br>
+    <button type="button" id="btn2">다음</button>
+    <br>
+    <br>
+    <button type="button" id="btn3">다음끄기</button>
+    <br>
+    <br>
+    <div class="div1"></div>
     <script>
         //프로퍼티 리스너
         const gogol = document.getElementById('btn1')
         gogol.onclick=function(){
+            //현재창 열기
             location.href="https://www.google.com"
         }
+        // addEventListener(eventType, function) 방식
+        const daum = document.querySelector('#btn2');
+        //파업 창 열기
+        let new_window = null;
+        // daum.addEventListener('click',()=>new_window=open('https://www.daum.net','','width=500 height=500'));
+        daum.addEventListener('click',popup(new_window));
+        //파업창 닫기
+        // close_daum=document.getElementById('btn3')
+        // btn3.addEventListener('click',()=>new_window.close()); //신기하네
+        // close_daum.addEventListener('click',()=>new_window.close());
+        //이벤트 삭제
+        // removeEventListener(event_type,function) addEventListener(eventType, function)와 같은 셋팅해야 삭제 가능
+        // daum.removeEventListener('click',()=>new_window=open('https://www.daum.net','','width=500 height=500')) //이벤트 삭제 불가능 쿨백함수는 다른 함수로 인식
+        daum.removeEventListener('click',popup(new_window)) 
+        function popup(win) {
+            win=open('https://www.daum.net','','width=500 height=500')
+        }
+        //이벤트 타입
+        //마우스 클릭 
+        const div1=document.querySelector('.div1')
+        div1.addEventListener('mousedown',()=>alert('div1 click'));
+        div1.addEventListener('mouseup',()=>alert('div1 clickup'));
+        div1.addEventListener('mouseenter',()=>alert('div1 enter'));
     </script>
 </body>
 </html>
