@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .find{
+        background-color: aqua;
+            height: 100px; width: 100px;
+        }
+        .find1{
+            background-color: purple;
+            height: 100px; width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="hint">버튼</button>
+    <div class="find"></div>
+    <!-- <div id="find1"></div> -->
+    <script>
+        
+        const hint = document.querySelector('#hint')
+        hint.addEventListener('click',()=>alert('"안녕하세요"\n"숨어있는 div를 찾아보세요."'))
+        // const find = document.querySelector('#find')
+        // const find1 = document.querySelector('#find1'),{once:true}
+        let a= document.querySelector('div')
+        a.addEventListener('mouseenter',()=>{if(a.className==='find'){alert('"두근두근"')}});
+        // a.addEventListener('mouseenter',()=>{if(a.id==='find'){alert('"두근두근"')}},{once:true});
+        a.addEventListener('click',()=>{if(a.className==='find'){{alert('"들켯다"'), a.setAttribute('class','find1')}}else if(a.className==='find1'){alert('"다시 숨는다"'), a.setAttribute('class','find')}})
+        // if (a.id==='find') {
+        //     // a= document.querySelector('div').id
+        //     // b=document.getElementById(a)
+        //     b.addEventListener('click',()=> {alert('"들켯다"'), b.setAttribute('id','find1')})
+        // }
+        // else if (a==='find1') {
+        //     // a= document.querySelector('div').id
+        //     // b=document.getElementById(a)
+        //     b.addEventListener('click',()=> {alert('"다시 숨는다"'), b.setAttribute('id','find')})
+        // }
+        // find.addEventListener('click',()=> {alert('"들켯다"'); find.setAttribute('id','find1')})
+        // find1.addEventListener('click',()=> {alert('"다시 숨는다"'); find1.setAttribute('id','find')})
+        // function change_id(id) {
+        //     if (id=='find') {
+        //         alert('"들켯다"')
+        //         b.setAttribute('id','find1')
+        //         // id='find1'
+        //     }
+        //     else if (id=='find1'){
+        //         alert('"다시 숨는다"')
+        //         b.setAttribute('id','find')
+        //         // id='find'
+        //     }
+        // };
+        // b.addEventListener('click',function change_id(a) {
+        // if (a=='find') {
+        //         alert('"들켯다"')
+        //         b.setAttribute('id','find1')
+        //         // id='find1'
+        //     }
+    //     else if (a=='find1'){
+    //             alert('"다시 숨는다"')
+    //             b.setAttribute('id','find')
+    //             // id='find'
+    //         }
+        //     });
+        
+        // find.addEventListener('click',change_id(find))
+        // find1.addEventListener('click',change_id(find1))
+
+        // let a= document.querySelector('div').id
+        // b=document.getElementById(a)
+        // let flg=0;
+        // b.addEventListener('mouseenter',()=>{if(flg===0){alert('"두근두근"')}});
+        // b.addEventListener('click',change_flg)
+        // function change_flg() {
+        //     if (flg===0) {
+        //         flg=1;
+        //         return alert('"들켯다"'),b.setAttribute('id','find1')
+        //     }
+        //     else if(flg===1){
+        //         flg=0;
+        //         return alert('"다시 숨는다"'),b.setAttribute('id','find')
+        //     }
+        // }
+        
+        </script>
+</body>
+</html>
