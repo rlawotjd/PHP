@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time"></div>
+    <br>
+    <button type="button" id="stop">멈춰!</button>
+    <button type="button" id="restart">재시작</button>
+    <script>
+        time =document.getElementById('time')
+        time_stop = document.getElementById('stop')
+        restart = document.getElementById('restart')
+        time_stop.addEventListener('click',()=>clearInterval(set_interval))
+        restart.addEventListener('click',()=>set_interval=setInterval(() => {
+            now=new Date()
+            print_now=now.toLocaleTimeString()
+            time.innerHTML=print_now;
+        }, 1000))
+        set_interval=setInterval(() => {
+            now=new Date()
+            print_now=now.toLocaleTimeString()
+            time.innerHTML=print_now;
+        }, 1000);
+
+    </script>
+</body>
+</html>
