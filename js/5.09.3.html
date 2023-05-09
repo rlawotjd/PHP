@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const promise1 = new Promise((resolve, reject) => {
+        //     resolve();
+        // });
+
+        // promise1
+        // .then(()=>{
+        //     console.log("then!");
+        // })
+        // .catch(()=>{
+        //     console.log("catch!");
+        // });
+        // const promise1= new Promise((resolve, reject) => {
+        //     reject();
+        // });
+        // promise1
+        // .then(()=>{
+        //     console.log("then!");
+        // })
+        // .catch(()=>{
+        //     console.log("catch!")
+        // });
+        function start_async(age) {
+            return new Promise((resolve, reject) => {
+                if(age>20)resolve();
+                else reject();
+            })
+        }
+        const promise1 = start_async(25);
+        promise1
+        .then(()=>{
+            console.log("1")
+            }
+        )
+        .catch(()=>{
+            console.log("2")
+        })
+
+        const promise2 = start_async(20)
+        promise2
+        .then(()=> {
+            console.log("A")
+        })
+        .catch(()=>{
+            console.log("B")
+        })
+    </script>
+</body>
+</html>
