@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout(() => {
+        //     console.log('A')
+        // }, 3000);
+        // setTimeout(() => {
+        //     console.log('B')
+        // }, 2000);
+        // setTimeout(() => {
+        //     console.log('C')
+        // }, 1000); //C->B->A 순 출력
+        // setTimeout(() => {
+        //     console.log('A')
+        //     setTimeout(() => {
+        //         console.log('B')
+        //         setTimeout(() => {
+        //             console.log('C')
+        //         }, 1000);
+        //     }, 2000);
+        // }, 3000);
+        
+        // function set_time(pf,ms) {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log(pf)
+        //             resolve()
+        //         }, ms)
+        //     })
+        // }
+        // set_time('A',3000)
+        // .then(()=>set_time('B',2000))
+        // .then(()=>set_time('C',1000))
+
+        // const set_time={
+        //     set_timeA(tf) {
+        //         return new Promise((resolve, reject) => {
+        //             if (tf) {
+        //                 resolve(setTimeout(() => {
+        //                     console.log('A')
+        //                     set_timeB(tf) {
+        //                         return new Promise((resolve, reject) => {
+        //                         if (tf) {
+        //                             resolve(setTimeout(() => {
+        //                             console.log('B')
+        //                             set_timeC(tf) {
+        //                             return new Promise((resolve, reject) => {
+        //                                 if (tf) {
+        //                                     resolve(setTimeout(() => {
+        //                                         console.log('C')
+        //                                     }, 1000))
+        //                             }else{
+        //                                 reject(new Error('다시 확인해주세요'))
+        //                             }
+        //                             })
+        //                         }
+        //                         }, 2000))
+        //                         }else{
+        //                             reject(new Error('다시 확인해주세요'))
+        //                         }
+        //                     })
+        //                 }
+        //                 }, 3000))
+        //             }else{
+        //                 reject(new Error('다시 확인해주세요'))
+        //             }
+        //         })
+        //     }
+        // }
+        // const tf=true;
+        // set_time.set_timeA(tf)
+        // .then(set_time.set_timeC(tf))
+        // .then(set_time.set_timeB(tf))
+        // .catch(error=>console.error(error.message))
+
+    </script>
+</body>
+</html>
