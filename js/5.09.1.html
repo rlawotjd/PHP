@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 동기 처리 위에서 아래로 순서되로
+        console.log('A')
+        console.log('B')
+        console.log('C')
+        console.log('D')
+        //비동기 처리 
+        // console.log('A')
+        // setTimeout(() => {
+        //     console.log('B')
+        // }, 1000);
+        // console.log('C')
+        const a=2
+        const b=3
+        const sum = function () {
+            setTimeout(() => {
+                return a+b;
+            }, 1000);
+        }
+        console.log(sum())
+        //비동기 처리에서의 콜백 지옥
+        setTimeout(() => {
+            console.log(a)
+            setTimeout(() => {
+                console.log(b)
+                setTimeout(() => {
+                    console.log('c')
+                }, 1000);
+            }, 2000);
+        }, 3000);
+
+        //로그인 콜백 지옥
+        
+        const login={
+            chk_input(id, pw, success, error){
+                setTimeout(() => {
+                    if(id !==''&& pw!==''){
+                        success({chk_id: id, chk_pw: pw});
+                    }else{
+                        error(new Error('잘못 입력 하셨습니다.'))
+                    }
+                }, 500);
+            }
+            , login_user(id, pw, success, error){
+                setTimeout(() => {
+                    if (id==='php506' && pw==='506') {
+                        success(id);
+                    }else{
+                        error(new Error('없는 유저입니다.'));
+                    }
+                }, 500);
+
+            }, chk_auth(id, success, error){
+                setTimeout(() => {
+                    if (id==='php506') {
+                        success({auth_id: id, auth: 'admin'});
+                    } else {
+                        error(new Error('권한이 없습니다'))
+                    }
+                }, 500);
+            }
+        }
+
+        const id='php506';
+        const pw='506';
+
+        login.chk_input(id,pw
+        ,chk_data=>{
+            login.login_user(
+                chk_data.chk_id
+                ,chk_data.chk_pw
+                ,login_id=>{
+                    login.chk_auth(
+                        login_id
+                        ,auth_data=>{console.log(`${auth_data.auth_id}유저님, 권한은 ${auth_data.auth}입니다`)}
+                        ,auth_error=>{console.log(auth_error.message)}
+                    )
+                }
+                ,login_error=>{console.log(login_error.message)}
+            )
+        }
+        ,chk_error=>{console.log(chk_error.message)})
+
+        // 콜백 함수
+        function my_call_back(i) {
+            return i+1;
+        }
+        function print_num(fn) {
+            console.log(fn(2));
+        }
+        print_num(my_call_back);
+        
+        function my_call_back1(i) {
+            return i+1;
+        }
+        function print_num1(fn) {
+            console.log(fn);
+        }
+        print_num1(my_call_back1(2));
+
+    </script>
+</body>
+</html>
