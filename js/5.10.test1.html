@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input_img img{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="input_img"></div>
+    <!-- <input type="text" id="inp_val" onchange="inputValueChange()"> -->
+    <input type="text" id="inp_val" >
+    <button type="button">API실행</button>
+    <script>
+        // const url = 'https://picsum.photos/v2/list?page=9&limit=10'
+        const input_img =document.getElementById('input_img')
+        const button = document.querySelector('button')
+        let flg =true
+        // fetch(inp_url)
+        // .then((res)=>{return res.json()})
+        // .then((date)=>make_list(date))
+        // .catch(console.log)
+        // function make_list(date) {
+        //     date.forEach(element => {
+        //         // console.log(element)
+        //         const make_img = document.createElement('img')
+        //         input_img.appendChild(make_img)
+        //         make_img.setAttribute('src',element.download_url)
+        //         make_img.style.height='100px'
+        //     });
+        // }
+        
+        // const inp_url=document.getElementById('inp_val').value
+        button.addEventListener('click', inputValueChange)
+            
+        function inputValueChange(){
+        const inp_url=document.getElementById('inp_val').value
+        // console.log(inp_url)
+            fetch(inp_url)
+            .then((res)=>{return res.json()})
+            .then((date)=>make_list(date))
+            .catch(Error)
+    }
+
+    function make_list(date) {
+        input_img.innerHTML="",
+        date.forEach(element => {
+            // console.log(element)
+            const make_img = document.createElement('img')
+            input_img.appendChild(make_img)
+            make_img.setAttribute('src',element.download_url)
+        })
+    }
+    // function make_list(date) {
+    //     // input_img.innerHTML="",
+    //     if (flg) {
+    //         date.forEach(element => {
+    //             // console.log(element)
+    //             const make_img = document.createElement('img')
+    //             input_img.appendChild(make_img)
+    //             make_img.setAttribute('src',element.download_url)
+    //             flg=false;
+    //         })
+    //     }
+    //         else{
+    //             date.forEach(element => {
+    //                 make_img.setAttribute('src',element.download_url)})
+    //         }
+    //     }
+    // }
+    
+    // function del_list() {
+    // }
+    
+    </script>
+</body>
+</html>
