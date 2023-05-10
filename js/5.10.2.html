@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const url='https://picsum.photos/v2/list?page=9&limit=10'
+        // const img=document.querySelectorAll('img')
+        fetch(url)
+        .then((res)=>{return res.json()})
+        .then((date)=> make_list(date))
+        .catch(console.log)
+
+        function make_list(date) {
+            date.forEach(item => {
+                console.log(item)
+                const a=document.createElement('img')
+                // a.setAttribute('src',item.download_url)
+                // a.style.height='500px'
+                // a.style.width='500px'
+                
+                // document.body.appendChild(a);
+                
+            });
+        }
+    </script>
+</body>
+</html>
