@@ -24,8 +24,12 @@
     </div>
     <script>
         const st = document.querySelector('test')
-        window.addEventListener('scroll',()=>{console.log(window.scrollY)})
-        
+        window.addEventListener('scroll',()=>{if(window.innerHeight+window.scrollY>=document.body.offsetHeight)
+            {alert("알람"); //화면 끝에 도달시 알람
+            const c_div=document.createElement('div'); //div만들기
+            document.body.appendChild(c_div); //바디에 div만들기
+            c_div.setAttribute('class','test')}}); //만든 div에 클래스명 넣기
+        // console.log($(window).height())
         // const lorem = document.querySelector(".lorem");
 
         // lorem.addEventListener('scroll', function () {
