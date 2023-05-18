@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test{
+            height: 500vh;
+            background-color: aquamarine;
+        }
+        .lorem{
+            height: 500vh;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="head"></div>
+    <div class="test"></div>
+    <!-- <div class="lorem"></div> -->
+
+    </div>
+    <script>
+        const st = document.querySelector('test')
+        window.addEventListener('scroll',()=>{if(window.innerHeight+window.scrollY>=document.body.offsetHeight)
+            {alert("알람"); //화면 끝에 도달시 알람
+            const c_div=document.createElement('div'); //div만들기
+            document.body.appendChild(c_div); //바디에 div만들기
+            c_div.setAttribute('class','test')}}); //만든 div에 클래스명 넣기
+        // console.log($(window).height())
+        // const lorem = document.querySelector(".lorem");
+
+        // lorem.addEventListener('scroll', function () {
+        //     console.log(lorem.scrollTop);
+        // });
+    </script>
+</body>
+</html>
