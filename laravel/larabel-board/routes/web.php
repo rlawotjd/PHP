@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\TasksController;
+use App\Http\Controllers\BladeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -137,42 +141,51 @@ Route::get('/sign', function () {
     return "sign!!";
 })->name('sign')->middleware('signed');
 
-Route::get('users/{id}', [UserController::class, 'index'])->name('user.index');
-Route::get('user', 'UserController@index')->name('user');
-Route::get('/users/{user}/posts/{post}', function (User $user, Post $post) {
-    return $post;
-})->scopeBindings();
-Route::scopeBindings()->group(function () {
+// Route::get('users/{id}', [UserController::class, 'index'])->name('user.index');
+// Route::get('user', 'UserController@index')->name('user');
+// Route::get('/users/{user}/posts/{post}', function (User $user, Post $post) {
+//     return $post;
+// })->scopeBindings();
+// Route::scopeBindings()->group(function () {
 
-});
-Route::post('user', 'UserController@index')->name('user');
-Route::any('users/{id}', function ($id) {
+// });
+// Route::post('user', 'UserController@index')->name('user');
+// Route::any('users/{id}', function ($id) {
 
-});
-Route::get('users/{id}', function ($id) {
+// });
+// Route::get('users/{id}', function ($id) {
 
-});
-Route::controller('users', 'UserController');
-Route::current()
-Route::currentRouteAction();
-Route::currentRouteName()
-Route::delete('users/{id}', function ($id) {
+// });
+// Route::controller('users', 'UserController');
+// Route::current()
+// Route::currentRouteAction();
+// Route::currentRouteName()
+// Route::delete('users/{id}', function ($id) {
 
-});
-Route::dispatch($request);
-Route::dispatchToRoute($request);
-Route::get('users/{id}', function ($id) {
+// });
+// Route::dispatch($request);
+// Route::dispatchToRoute($request);
+// Route::get('users/{id}', function ($id) {
 
-});
-Route::middleware(['auth', 'second'])->group(function () {
+// });
+// Route::middleware(['auth', 'second'])->group(function () {
 
-});
-$router->model('user', 'App\Models\User')
-$router->pattern('id', '[0-9]+')
-Route::redirect('URI', 'URI', 301);
-Route::resource('user', UserController::class);
-$router->when('admin/*', 'admin', ['post'])
-Route::controller(OrderController::class)->group(function () {
-    Route::get('/orders/{id}', 'show');
-    Route::post('/orders', 'store');
-});
+// });
+// $router->model('user', 'App\Models\User')
+// $router->pattern('id', '[0-9]+')
+// Route::redirect('URI', 'URI', 301);
+// Route::resource('user', UserController::class);
+// $router->when('admin/*', 'admin', ['post'])
+// Route::controller(OrderController::class)->group(function () {
+//     Route::get('/orders/{id}', 'show');
+//     Route::post('/orders', 'store');
+// });
+
+//컨트롤러
+//커멘드로 컨트롤러 생성 : php artisan make:controller TestController
+Route::get('/test', [TestController::class, 'index'])->name('test.index');
+Route::get('/test1', [TestController::class, 'view'])->name('test1.index');
+//커멘드로 컨트롤러 생성php artisan make:controller TasksController --resource
+Route::resource('/tasks', TasksController::class);
+//php artisan route:list
+Route::get('/blade', [BladeController::class, 'index'])->name('blade.index');

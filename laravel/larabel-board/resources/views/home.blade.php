@@ -22,5 +22,6 @@
         @method('delete')
     <button type="submit">del버튼</button>
 </form>
+<a href="{{route('test.index')}}">테스트 깐트롤러</a>
 </body>
 </html>
