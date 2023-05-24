@@ -1,86 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        function delay() {
-            const delay_time = Date.now() +200;
-            while(Date.now()<delay_time){
-            }
-            console.log('B');
-        }
-        // console.log('A')
-        // delay()
-        // console.log('C')
+      function delay() {
+        const delay_time = Date.now() + 200;
+        while (Date.now() < delay_time) {}
+        console.log("B");
+      }
+      // console.log('A')
+      // delay()
+      // console.log('C')
 
-        function delay2() {
-            return new Promise((resolve, reject) => {
-                const delay_time = Date.now() +200;
-                while(Date.now()<delay_time){
-                }
-                resolve('B');
-            })
-        }
-        // console.log('A')
-        // delay2()
-        // .then((get_b) => console.log(get_b))
-        // console.log('C')
-        
-        //async
-        async function delay3() {
-            const delay_time = Date.now() +200;
-            while(Date.now()<delay_time){
-            }
-            return 'B';
-        }
-        // console.log('A')
-        // delay3().then((get_b)=>console.log(get_b))
-        // console.log('C')
-        
-        //await : async 가 붙은 함수안에만 사용가능
-        function my_delay(ms) {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve()
-                }, ms);
-            })
-        }
-        async function get_a() {
-            await my_delay(1000)
-            return 'A'
-        }
-        async function get_b() {
-            await my_delay(2000)
-            return 'B'
-        }
-        // console.log(get_a()+get_b())
-        // get_a().then((str_a)=>console.log(str_a))
-        // get_b().then((str_b)=>console.log(str_b))
-        //프라미스 지옥
-        // get_a().then((str_a)=>{return get_b().then((str_b)=>console.log(`${str_a} : ${str_b}`))})
-        //saync이용
-        async function get_all() {
-            const str_a=await get_a();
-            const str_b=await get_b();
+      function delay2() {
+        return new Promise((resolve, reject) => {
+          const delay_time = Date.now() + 200;
+          while (Date.now() < delay_time) {}
+          resolve("B");
+        });
+      }
+      // console.log('A')
+      // delay2()
+      // .then((get_b) => console.log(get_b))
+      // console.log('C')
 
-            console.log(`${str_a}: ${str_b}`)
-        }
-        // get_all()
+      //async
+      async function delay3() {
+        const delay_time = Date.now() + 200;
+        while (Date.now() < delay_time) {}
+        return "B";
+      }
+      // console.log('A')
+      // delay3().then((get_b)=>console.log(get_b))
+      // console.log('C')
 
-        // 병렬처리
-        async function get_all1(){
-            // throw new Error('err')
-            return Promise.all([get_a(),get_b()])
-            .then(all=>all.join(':'))
-        }
-        get_all1()
-        .then(strall=>console.log(strall))
-        .catch('error')
-        </script>
-</body>
+      //await : async 가 붙은 함수안에만 사용가능
+      function my_delay(ms) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve();
+          }, ms);
+        });
+      }
+      async function get_a() {
+        await my_delay(1000);
+        return "A";
+      }
+      async function get_b() {
+        await my_delay(2000);
+        return "B";
+      }
+      // console.log(get_a()+get_b())
+      // get_a().then((str_a)=>console.log(str_a))
+      // get_b().then((str_b)=>console.log(str_b))
+      //프라미스 지옥
+      // get_a().then((str_a)=>{return get_b().then((str_b)=>console.log(`${str_a} : ${str_b}`))})
+      //async이용
+      async function get_all() {
+        const str_a = await get_a();
+        const str_b = await get_b();
+
+        console.log(`${str_a}: ${str_b}`);
+      }
+      // get_all()
+
+      // 병렬처리
+      async function get_all1() {
+        // throw new Error('err')
+        return Promise.all([get_a(), get_b()]).then((all) => all.join(":"));
+      }
+      get_all1()
+        .then((stroll) => console.log(stroll))
+        .catch("error");
+    </script>
+  </body>
 </html>
