@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\BladeController;
+use App\Http\Controllers\BoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -186,6 +187,7 @@ Route::get('/sign', function () {
 Route::get('/test', [TestController::class, 'index'])->name('test.index');
 Route::get('/test1', [TestController::class, 'view'])->name('test1.index');
 //커멘드로 컨트롤러 생성php artisan make:controller TasksController --resource
-Route::resource('/tasks', TasksController::class);
+Route::resource('/tasks', TasksController::class); //한번에 모든 함수들 연결
 //php artisan route:list
 Route::get('/blade', [BladeController::class, 'index'])->name('blade.index');
+Route::resource('/board', BoardController::class);

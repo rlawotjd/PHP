@@ -27,6 +27,7 @@ class CategorySeeder extends Seeder
             ,['no'=>'5','name'=>'카테고리5']
             ,['no'=>'6','name'=>'카테고리6']
             ,['no'=>'7','name'=>'카테고리7']
+            ,['no'=>'8','name'=>'카테고리8']
             ]
         );
     }
