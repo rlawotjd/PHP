@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ use App\Http\Controllers\UserController;
 
 Route::get('/users/login', [UserController::class, 'login'])->name('user.login');
 Route::post('/users/loginpost', [UserController::class, 'loginpost'])->name('user.loginpost');
+
+Route::resource('/boards', BoardController::class);

@@ -7,6 +7,7 @@
     <title>list</title>
 </head>
 <body>
+@include('layout.header')
     <a href="{{route('boards.create')}}">작성</a>
     <table>
         <tr>
