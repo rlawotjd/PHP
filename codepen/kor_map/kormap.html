@@ -9,6 +9,9 @@
     #kor_map{
       width: 700px; height: 700px;
     }
+    #jeju::after{
+      content: "강원도";
+    }
   </style>
 </head>
 <body>
@@ -49,7 +52,7 @@
         <polygon class="cls-1" points="1007.8 580.92 1039.53 580.92 1039.53 561.52 1007.8 561.52 1007.8 580.92 1007.8 580.92"/>
       </clipPath>
     </defs>
-    <title>ko_map_b2</title>
+    <title>"대한민국"</title>
     <g id="jeju">
       <polygon class="cls-2" points="36.63 419.39 37.1 412.33 41.78 408.57 47.41 407.16 53.03 400.57 60.53 398.69 68.03 397.75 69.9 395.87 80.22 395.87 83.5 393.52 88.18 394.46 92.87 398.69 95.68 404.34 92.87 411.39 83.03 419.86 73.19 424.09 64.75 426.44 57.25 424.09 51.16 427.38 45.53 428.79 39.44 423.15 36.63 419.39 36.63 419.39 36.63 419.39"/>
       <polygon class="cls-3" points="36.63 419.39 37.1 412.33 41.78 408.57 47.41 407.16 53.03 400.57 60.53 398.69 68.03 397.75 69.9 395.87 80.22 395.87 83.5 393.52 88.18 394.46 92.87 398.69 95.68 404.34 92.87 411.39 83.03 419.86 73.19 424.09 64.75 426.44 57.25 424.09 51.16 427.38 45.53 428.79 39.44 423.15 36.63 419.39 36.63 419.39 36.63 419.39"/>
@@ -123,12 +126,29 @@
       </g>
     </g>
   </svg>
+
   <script>
+    let flg=true
     const gang = document.getElementById('gang')
-    const color = document.querySelector('.cls-2')
-    gang.addEventListener('click',()=>alert('작동확인'));
+    const color = document.getElementById('gang').querySelector('.cls-2')
+    // gang.addEventListener('click',()=>alert('작동확인'));
+    // gang.addEventListener('click',()=>gang.insertAdjacentText('강원도'));
     // gang.addEventListener('mouseenter',()=>alert('작동확인'));
-    // gang.addEventListener('mouseenter',()=>gang.style.fill('255,0,0'));
+    // gang.addEventListener('mouseenter',()=>color.style.fill='#990000');
+    // gang.addEventListener('mouseout',()=>color.style.fill='#c6d9f1');
+    gang.addEventListener('click',()=>{
+      if (flg) {
+        color.style.fill='#990000'
+        flg=false
+      }
+      else{
+        color.style.fill='#c6d9f1'
+        flg=true
+      }
+    }
+    );
+    // gang.addEventListener('click',()=>color.style.fill='#c6d9f1');
+    
   </script>
 </body>
 </html>
