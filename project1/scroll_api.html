@@ -34,7 +34,7 @@
 
             const body = document.getElementById('body')
             const url = "https://randomfox.ca/floof/"
-            for (let index = 0; index < 8; index++) {
+            for (let index = 0; index <20; index++) {
                 fetch(url)
                     .then((res) => { return res.json() })
                     .then((date) => make_list([date]))
@@ -49,6 +49,7 @@
                 console.log(item)
                 const a = document.createElement('img')
                 a.setAttribute('src', item.image)
+                a.setAttribute('loading', 'lazy')
 
                 document.body.appendChild(a);
 
