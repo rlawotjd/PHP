@@ -27,6 +27,10 @@
       .cls-5 {
         clip-path: url(#clip-path-2);
       }
+      .gang::after{
+        display:block;
+        content:"new!!";
+      }
     </style>
     <clipPath id="clip-path" transform="translate(-702.55 -441.84)">
       <polygon class="cls-1" points="713.92 566.84 774.74 566.84 774.74 498.94 713.92 498.94 713.92 566.84 713.92 566.84"/>
