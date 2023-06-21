@@ -23,3 +23,5 @@ Route::get('/users/{email}', [ApiUserController::class, 'UserGet'])->name('user.
 Route::post('/users', [ApiUserController::class, 'UserPost'])->name('user.post');
 Route::put('/users/{email}', [ApiUserController::class, 'UserPut'])->name('user.put');
 Route::delete('/users/{email}', [ApiUserController::class, 'UserDel'])->name('user.delete');
+
+Route::resource('test', TestApiController::class);
