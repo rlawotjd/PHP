@@ -9,7 +9,7 @@
     <p>{{price2}}원</p>
   </div> -->
   <div v-for="(item,index) in products" :key="index">
-  <!-- 기본 foreach -->
+  <!-- 디폴트 foreach -->
     <h4>{{ item.name }}</h4>
     <p>{{ item.price }}원</p>
   </div>
@@ -18,7 +18,7 @@
     <p>{{ item.price }}원</p>
   </div>
   <div v-for="(item) in 2" :key="item"> 
-  <!-- for문 형식 -->
+  <!-- for문 형식쓰고싶을때 -->
     <h4>{{ item }}</h4>
     <p>{{ item }}원</p>
   </div>
