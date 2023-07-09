@@ -19,6 +19,7 @@
         <p>{{ products.price }}원</p>
         <p>{{ products.count }}개</p>
         {{ moduleFlg }}
+        {{ products }}
     </div>
 </template>
 <script>

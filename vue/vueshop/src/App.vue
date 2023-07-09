@@ -11,8 +11,8 @@
     <p>{{price2}}원</p>
   </div> -->
   <Header :navList="navList" />
-  <Content @openModule="moduleFlg=!moduleFlg" :products="item" v-for="(item, index) in products" :key="index" :moduleFlg="moduleFlg"/>
-  <Module @closeModule="moduleFlg=!moduleFlg" :moduleFlg="moduleFlg" :/>
+  <Content @openModule="moduleFlg=!moduleFlg; proNum=index " :products="item" v-for="(item, index) in products" :key="index" :moduleFlg="moduleFlg"/>
+  <Module @closeModule="moduleFlg=!moduleFlg" :moduleFlg="moduleFlg" :products=products[proNum] @callMinus="minus(proNum)" @callPluse="pluse(proNum)"/>
   
       <!-- 모달 -->
   <!-- <div class="bg_black" v-if="item.moduleFlg">
@@ -78,7 +78,7 @@ export default {
       // products:[{name:'티셔츠',price:'5000' ,count:1, img:require("./assets/cat.webp")},{name:'바지',price:'2000',count:1,img:require("./assets/cat2.jpg")},{name:'점퍼',price:'6000',count:1,img:require("./assets/cat3.jpg")}],
       products:data,
       count:['1','1','1'],
-      moduleFlg:true,
+      moduleFlg:false,
       proNum:0,
       navList:['홈','상품','기타','양말']
     }

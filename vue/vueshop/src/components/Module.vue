@@ -11,19 +11,25 @@
             <button @click="moduleFlg=!moduleFlg; products[proNum].count='0'" >❌</button>
         </div>
     </div> -->
-    <div v-if="moduleFlg">
-        상품명
-        내용
-        가격
-        <button @click="$emit('closeModule')">닫기</button>
-        <!-- {{ moduleFlg }} -->
+    <div class="bg_black" v-if="moduleFlg">
+        <div class="bg_white">
+            <img :src="products.img" alt="">
+            <h4>{{ products.name }}</h4>
+            <p>{{ products.content }}</p>
+            <p>{{ products.count*products.price }}</p>
+            <button type="button" @click="$emit('callPluse')">수량증가</button>
+            <button type="button" @click="$emit('callMinus')">수량감소</button>
+            <p>{{ products.count }}</p>
+            <button @click="$emit('closeModule')">닫기</button>
+        </div>
     </div>
 </template>
 <script>
 export default {
     name:'Module',
     props:{
-        moduleFlg:Boolean
+        moduleFlg:Boolean,
+        products:Array,
     }
 }
 </script>
