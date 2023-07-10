@@ -1,4 +1,6 @@
 <template>
+  <!-- {{@scroll="product2=10;"}} -->
+  <!-- <p>{{ product2 }}</p> -->
   <img alt="Vue logo" src="./assets/logo.png">
   
 
@@ -11,9 +13,23 @@
     <p>{{price2}}원</p>
   </div> -->
   <Header :navList="navList" />
+  <div class="discount" v-if="flg">
+    <p>{{discountNum}}%할인</p>
+  </div>
+  <button @click="hookTest=!hookTest">hook test</button>
+  <p>
+    후크 테스트 : {{ hookTest}} 플래그 : {{ flg }}
+  </p>
+  <br>
+  <!-- <input type="text" name="" id="" @input="product2=$event.target.value"> -->
+  <input type="text" name="" id="" v-model="product2" v-bind:maxlength="10">
+  {{ product2 }}
   <Content @openModule="moduleFlg=!moduleFlg; proNum=index " :products="item" v-for="(item, index) in products" :key="index" :moduleFlg="moduleFlg"/>
-  <Module @closeModule="moduleFlg=!moduleFlg" :moduleFlg="moduleFlg" :products=products[proNum] @callMinus="minus(proNum)" @callPluse="pluse(proNum)"/>
-  
+  <!-- <div class="transStart" :class="{transEnd:moduleFlg}"> 오르지날(?)애니효과 -->
+  <transition name="transModule">
+    <Module @closeModule="moduleFlg=!moduleFlg" :moduleFlg="moduleFlg" :products=products[proNum] @callMinus="minus(proNum)" @callPluse="pluse(proNum)" :product2="product2"/>
+  </transition>
+  <!-- </div> -->
       <!-- 모달 -->
   <!-- <div class="bg_black" v-if="item.moduleFlg">
       <div class="bg_white">
@@ -70,7 +86,7 @@ export default {
       // num:[1,2,3],
       chung:'청',
       product1:'양말',
-      product2:'',
+      product2:'멍청멍청',
       price1:'3800',
       price2:'5000',
       styleR: 'color:red',
@@ -80,8 +96,28 @@ export default {
       count:['1','1','1'],
       moduleFlg:false,
       proNum:0,
-      navList:['홈','상품','기타','양말']
+      navList:['홈','상품','기타','양말'],
+      hookTest:false,
+      flg:false,
+      discountNum:2000,
     }
+  },
+  updated() {
+    this.flg=true;
+  },
+  created() {
+    this.flg=true;
+  },
+  mounted() {
+      setInterval(() => {
+        if (this.discountNum === 0) {
+          return clearInterval
+        }
+        this.discountNum--;
+      }, 1);
+      // setInterval(() => {
+      //   this.flg=!this.flg
+      // }, 1);
   },
   methods: {
     pluse(index){
@@ -95,6 +131,22 @@ export default {
     flgNumChange(index){
       this.moduleFlg=!this.moduleFlg;
       this.proNum=index
+    },
+    eventScroll(){
+      this.product2=10;
+    }
+  },
+  watch:{
+    // product2(){
+    //   if (this.product2==='3') {
+    //     alert('워치 검증')
+    //   }
+    // },
+    product2(inp){
+      if (inp==='3') {
+        alert('워치 검증');
+        // this.product2="";
+      }
     }
   },
   components:{

@@ -28,3 +28,39 @@
     padding: 20px;
     margin: auto;
 }
+.bg_white img{
+    width: 50%;
+}
+.transStart{
+    opacity: 0;
+    transition: all 1s;
+}
+.transEnd{
+    opacity: 1;
+}
+/* ㄷㄷㄷㅈ */
+.transModule-enter-from{
+    opacity: 0;
+}
+.transModule-enter-active{
+    transition: all 1s;
+}
+.transModule-enter-to{
+    opacity: 1;
+}
+
+.transModule-leave-from{
+    opacity: 1;
+}
+.transModule-leave-active{
+    transition: all 1s;
+}
+.transModule-leave-to{
+    opacity: 0;
+}
+
+.discount{
+    background: #ff9;
+    padding: 20px;
+    
+}
