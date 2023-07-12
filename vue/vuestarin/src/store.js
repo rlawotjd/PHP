@@ -11,7 +11,9 @@ const store=createStore({
             butFlg:true,
             tabFlg:'0',// 0-메인/1-필터/2-작성
             imgUrl:'',
-            filter:''
+            filter:'Null',
+            content:'',
+            imgFile:null,
         }
     },
     mutations:{
@@ -35,10 +37,18 @@ const store=createStore({
         changeImgUrl(state,url){ //이미지 가지고오기
             state.imgUrl=url;
         },
+        changeImgFile(state,File){ //이미지 가지고오기
+            state.imgFile=File;
+        },
         changeFilter(state,selFilter){ //필터변경
             state.filter=selFilter
+        },
+        changeContent(state,content){ //내용 변경
+            state.content=content
+        },
+        addWriteData(state,data){
+            state.boardData.unshift(data);
         }
-
     },
     actions:{
         // 비동기처리
@@ -58,6 +68,31 @@ const store=createStore({
                     }
                 })
         },
+        witeContent(context){
+
+            const header={
+                headers:{
+                    'Content-Type':'multipart/form-data'
+                }
+            }
+
+            axios.post('http://192.168.0.66/api/boards',{
+            name: '김재성',
+            filter:context.state.filter,
+            img:context.state.imgFile,
+            content:context.state.content
+            },header)
+            .then(res=>{
+                console.log(res);
+                this.dispatch('getMainList');
+                // context.state.boardData.unshift(res.data);
+                context.commit('changeContent','')
+                // context.commit('addWriteData',res.data)
+            })
+            .catch(err=>{
+                console.log(err);
+            })
+        }
     }
 })
 

@@ -8,6 +8,7 @@
         <img class="logo" alt="Vue logo" src="./assets/logo.png">
       </li>
       <li class="header-button header-button-right" @click="$store.commit('changeTabFlg','2');" v-if="$store.state.tabFlg==='1'">다음</li>
+      <li class="header-button header-button-right" @click="$store.commit('changeTabFlg','0'); $store.dispatch('witeContent')" v-if="$store.state.tabFlg==='2'">완료</li>
     </ul>
   </div>
   <!-- 컨테이너 -->
@@ -18,7 +19,7 @@
   <div class="footer">
     <div class="footer-button-store" v-if="$store.state.tabFlg==='0'">
       <label for="file" class="label-store">+</label>
-        <input type="file" name="file" id="file" accept="image/*" class="input-file" @change="updateImg">
+      <input type="file" name="file" id="file" accept="image/*" class="input-file" @change="updateImg">
     </div>
   </div>
 </template>
@@ -40,6 +41,7 @@ export default {
       let file = e.target.files;
       let imgUrl=URL.createObjectURL(file[0]);
       this.$store.commit('changeImgUrl',imgUrl)
+      this.$store.commit('changeImgFile',file[0])
       this.$store.commit('changeTabFlg','1');
       e.target.value=''
     }

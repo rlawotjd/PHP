@@ -21,8 +21,9 @@
         <div class="upload-img" v-bind:style="{backgroundImage :`url('${$store.state.imgUrl}')`}" :class="$store.state.filter">
         </div>
         <div>
-            <textarea name="content" id="content" cols="30" rows="10" class="write-box" placeholder='글써'></textarea>
+            <textarea name="content" id="content" cols="30" rows="10" class="write-box" placeholder='글써' v-model="$store.state.content"></textarea>
         </div>
+        {{$store.state.content}}
     </div>
 </template>
 <script>
