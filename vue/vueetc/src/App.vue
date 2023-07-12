@@ -35,6 +35,15 @@ export default {
       age:21
     });
 
+    
+    // onMounted(() => {
+    //   //처리
+    // }),
+    // onBeforeMount(() => {
+    //   //처리
+    // }),
+    
+
     return {test, data, data2};
   }
   // data() {
