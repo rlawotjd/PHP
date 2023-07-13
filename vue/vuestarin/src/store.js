@@ -75,7 +75,6 @@ const store=createStore({
                     'Content-Type':'multipart/form-data'
                 }
             }
-
             axios.post('http://192.168.0.66/api/boards',{
             name: '김재성',
             filter:context.state.filter,
