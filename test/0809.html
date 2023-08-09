@@ -6,86 +6,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        /* *{
             margin: 0;
             padding: 0;
+        } */
+        body{
+            background: linear-gradient(225deg, #1C244C 0%, #181A20 10.42%, #191B26 88.54%, #1C244C 100%) no-repeat center;
+            color: #f8f8f8;
         }
-        div{
-            border: 1px solid #000;
-            background-color: aqua;
-            width: 100px;
-            height: 100px;
-            margin-top: 100vh;
+        .content{
+            width: 100%;
+            height: 100vh;
             text-align: center;
             opacity: 0;
             transition: all 1s;
         }
-
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 75px;
+            color: white;
+            background: #08080800;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1;
+        }
+        .target{
+            opacity: 0.2;
+            transition: all 1s;
+        }
+        /* .progress-bar {
+        z-index: 1;
+        position: fixed;
+        top: 50px;
+        height: 8px;
+        background: #000;
+        width: 100%;
+        } */
     </style>
 </head>
 <body>
     <header>
+        <div class="progress-bar"></div>
         <div class="header">
-            <h1>헤더</h1>
+            <div class="target">3월</div>
+            <div class="target">4월</div>
+            <div class="target">5월</div>
+            <div class="target">6월</div>
+            <div class="target">7월</div>
+            <div class="target">8월</div>
         </div>
     </header>
-    <div class="html">
-        <h1>html</h1>
-    </div>
-    <div class="css">
-        <h1>css</h1>
-    </div>
-    <div class="mariadb">
-        <h1>마리아디비</h1>
-    </div>
-    <div class="php">
-        <h1>피에이치피</h1>
-    </div>
-    <div class="1st">
-        <h1>1차 프로젝트</h1>
-    </div>
-    <div class="bootscrap">
-        <h1>부트스트렙</h1>
-    </div>
-    <div class="js">
-        <h1>자스</h1>
-    </div>
-    <div class="laravel">
-        <h1>라라벨</h1>
-    </div>
-    <div class="2ed">
-        <h1>2차</h1>
-    </div>
-    <div class="vue">
-        <h1>뷰</h1>
-    </div>
-    <div class="3rd">
-        <h1>3차</h1>
-    </div>
-    <div class="ubuntu">
-        <h1>우분투</h1>
-    </div>
-    <div class="resume">
-        <h1>이력서</h1>
-    </div>
+        <div class="content html">
+            <h1>html 2월28일 0</h1>
+        </div>
+        <div class="content css">
+            <h1>css 3월 7일 1</h1>
+        </div>
+        <div class="content mariadb">
+            <h1>마리아디비 3월 13일 2</h1>
+        </div>
+        <div class="content php">
+            <h1>피에이치피 3월22일 3</h1>
+        </div>
+        <div class="content 1st">
+            <h1>1차 프로젝트 4월 18일 4</h1>
+        </div>
+        <div class="content js">
+            <h1>자스 5월 2일 5</h1>
+        </div>
+        <div class="content bootscrap">
+            <h1>부트스트렙 5월 11일 6</h1>
+        </div>
+        <div class="content laravel">
+            <h1>라라벨5월 22일 7</h1>
+        </div>
+        <div class="content 2ed">
+            <h1>2차 6월 5일 8</h1>
+        </div>
+        <div class="content vue">
+            <h1>뷰 7월 6일 9</h1>
+        </div>
+        <div class="content 3rd">
+            <h1>3차 7월 14일 10</h1>
+        </div>
+        <div class="content ubuntu">
+            <h1>우분투 8월 7일 11</h1>
+        </div>
+        <div class="content resume">
+            <h1>이력서 12</h1>
+        </div>
     <script>
         let observer = new IntersectionObserver((e)=>{
-            // console.log(e)
             e.forEach((box)=>{
-                    // box.target.style.opacity=1;
-                    // console.log('나타나기완료')
                 if (box.isIntersecting) {
                     box.target.style.opacity=1;
+                    console.log(box.target);
+                    if (box.target===content[0]) {
+                        appear(0)
+                    }
+                    if (box.target===content[1]) {
+                        appear(0)
+                    }
+                    if (box.target===content[2]) {
+                        appear(0)
+                    }
+                    if (box.target===content[3]) {
+                        appear(0)
+                    }
+                    if (box.target===content[4]) {
+                        appear(1)
+                    }
+                    if (box.target===content[5]) {
+                        appear(2)
+                    }
+                    if (box.target===content[6]) {
+                        appear(2)
+                    }
+                    if (box.target===content[7]) {
+                        appear(2)
+                    }
+                    if (box.target===content[8]) {
+                        appear(3)
+                    }
+                    if (box.target===content[9]) {
+                        appear(4)
+                    }
+                    if (box.target===content[10]) {
+                        appear(4)
+                    }
+                    if (box.target===content[11]) {
+                        appear(5)
+                    }
+                    if (box.target===content[12]) {
+                        appearall()
+                    }
                 }else{
                     box.target.style.opacity=0;
                 }
             })
         })
-        let div = document.querySelectorAll('div')
-        for (let i = 0; i < div.length; i++) {
-            const trans = observer.observe(div[i])
+        let content = document.querySelectorAll('.content')
+        let targetdiv = document.querySelectorAll('.target')
+        function appear(i) {
+            let targetdiv = document.querySelectorAll('.target')
+            for (let index = 0; index < targetdiv.length; index++) {
+                if (index===i) {
+                    targetdiv[index].style.opacity=1;
+                } else {
+                    targetdiv[index].style.opacity=0.2;
+                }
+            }
         }
-        // observer.observe(div[0])
+        function appearall() {
+            let targetdiv = document.querySelectorAll('.target')
+            for (let index = 0; index < targetdiv.length; index++) {
+                targetdiv[index].style.opacity=1;
+            }
+        }
+        for (let i = 0; i < content.length; i++) {
+            const trans = observer.observe(content[i])
+        }
+    //     document.addEventListener('scroll', () => {
+    // progress = document.querySelector('.progress-bar');
+
+    // let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+    //     height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+    //     scrolled = (winScroll / height) * 100;
+    // progress.style.width = scrolled + '%';
+    // });
     </script>
 </body>
 </html>
