@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            border: 1px solid #000;
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+            margin-top: 100vh;
+            text-align: center;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>헤더</h1>
+        </div>
+    </header>
+    <div class="html">
+        <h1>html</h1>
+    </div>
+    <div class="css">
+        <h1>css</h1>
+    </div>
+    <div class="mariadb">
+        <h1>마리아디비</h1>
+    </div>
+    <div class="php">
+        <h1>피에이치피</h1>
+    </div>
+    <div class="1st">
+        <h1>1차 프로젝트</h1>
+    </div>
+    <div class="bootscrap">
+        <h1>부트스트렙</h1>
+    </div>
+    <div class="js">
+        <h1>자스</h1>
+    </div>
+    <div class="laravel">
+        <h1>라라벨</h1>
+    </div>
+    <div class="2ed">
+        <h1>2차</h1>
+    </div>
+    <div class="vue">
+        <h1>뷰</h1>
+    </div>
+    <div class="3rd">
+        <h1>3차</h1>
+    </div>
+    <div class="ubuntu">
+        <h1>우분투</h1>
+    </div>
+    <div class="resume">
+        <h1>이력서</h1>
+    </div>
+    <script>
+        let observer = new IntersectionObserver((e)=>{
+            // console.log(e)
+            e.forEach((box)=>{
+                    // box.target.style.opacity=1;
+                    // console.log('나타나기완료')
+                if (box.isIntersecting) {
+                    box.target.style.opacity=1;
+                }else{
+                    box.target.style.opacity=0;
+                }
+            })
+        })
+        let div = document.querySelectorAll('div')
+        for (let i = 0; i < div.length; i++) {
+            const trans = observer.observe(div[i])
+        }
+        // observer.observe(div[0])
+    </script>
+</body>
+</html>
