@@ -19,4 +19,4 @@ apiController.interceptors.request.use(
     }
 )
 
-export default {apiController};
+export default apiController;
